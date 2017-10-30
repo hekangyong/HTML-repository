@@ -1,0 +1,260 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/material.min.css" th:href="@{/css/material.min.css}">
+        <link rel="stylesheet" href="../static/fonts/material-icons.css" th:href="@{/fonts/material-icons.css}">
+        <link rel="stylesheet" href="../static/css/albums.css" th:href="@{/css/albums.css}">
+        <link href="../static/css/base.css" rel="stylesheet" th:href="@{/css/base.css}">
+        <link href="../static/css/dropzone.css" rel="stylesheet" th:href="@{/css/dropzone.css}">
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <main class="mdl-layout__content bg_color">
+            <div class="page-content">
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect home-add" id="dropzone_btn"><i class="material-icons">add</i></div>
+                <div class="mdl-grid mainPage albums-main" style="padding: 0;">
+                    <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone photos-card" style="padding-left: 0; transition: 0.3s;">
+                        <!--photos-card-->
+                        <div class="photos-heading">
+                        </div>
+                        <div class="photos-body">
+                            <form th:action="@{/album/create}" method="post">
+                                <div class="create_album" name="create_album">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label photo-name">
+                                        <input class="mdl-textfield__input" type="text" id="name" name="name">
+                                        <label class="mdl-textfield__label" for="name">相册名：</label>
+                                    </div>
+                                    <div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                                            <input class="mdl-textfield__input" type="text" id="scope_input" value="" readonly tabIndex="-1">
+                                            <input name="scope" type="hidden">
+                                            <label for="scope_input" class="mdl-textfield__label">请选择分享方式</label>
+                                            <ul for="scope_input" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">公开</li>
+                                                <li class="mdl-menu__item">保密</li>
+                                                <li class="mdl-menu__item" name="friend_btn">指定好友</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth friend" name="friend">
+                                            <input class="mdl-textfield__input" type="text" id="sample2" value="" readonly tabIndex="-1">
+                                            <label for="sample2" class="mdl-textfield__label">请选择指定的好友</label>
+                                            <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">好友1</li>
+                                                <li class="mdl-menu__item">好友2</li>
+                                                <li class="mdl-menu__item">好友3</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <input type="text" name="friend" /> -->
+                                    <input type="submit" value="创建" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>
+                                </div>
+                                <div class="photos">
+                                    <div class="pt-body">
+                                        <div id="dropzone" class="dropzone">
+                                            <div class="dz-default dz-message"><span></span></div>
+                                        </div>
+                                        <div name="" th:each="element,stat: ${files}">
+                                            <div class="ptb-title-box">
+                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                    <input type="checkbox" class="mdl-checkbox__input" th:id="${'checkbox'+stat.index}" th:data-date="${element.key}">
+                                                    <span class="mdl-checkbox__label" th:text="${element.key}">2017年2月27日</span>
+                                                </label>
+                                                <div class="del-this-albums pull-left" style="display: none;">
+                                                    <!--<i class="glyphicon glyphicon-remove"></i>--></div>
+                                                </div>
+                                                <div class="lightbox clearfix">
+                                                    <div class="img-box" th:each="item,row:${element.value}" th:data-id="${item?.id}">
+                                                        <div class="lightbox-item">
+                                                            <img src="../static/img/banner1.jpg" th:src="@{/photo/{id}(id=${item?.file?.id})}" th:data-url="@{/photo/{id}(id=${item?.file?.id})}" th:alt="${item?.name}">
+                                                            <button th:id="demo-op1__${item.id}__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+                                                            <i class="material-icons">more_vert</i>
+                                                            </button>
+                                                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" th:for="demo-op1__${item.id}__">
+                                                                <li class="mdl-menu__item" name="reset_name">重命名</li>
+                                                                <li class="mdl-menu__item">分享</li>
+                                                                <li class="mdl-menu__item file_delete">删除</li>
+                                                            </ul>
+                                                            <div class="del-pic" th:name="|${item?.file?.cdate}${'checkbox'+row.index}|" th:data-date="${item?.file?.cdate}">
+                                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                                    <input type="checkbox" name="fileids" th:value="${item?.id}" class="mdl-checkbox__input">
+                                                                    <!-- <span class="mdl-checkbox__label" th:text="${item?.cdate}">2017年2月27日</span> -->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div style="height: 43px;overflow:hidden;">
+                                                            <div class="albumName"><!-- <a href="javascript:void();" th:text="${item?.name}" >banner1.jpg</a> <-->
+                                                                <input type="text" value="" th:value="${item?.name}">
+                                                            </div>
+                                                            <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                                                                <form th:action="@{'/file/'+${item?.id}}+'/update'" method="post">
+                                                                    <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                                                                        <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" th:value="${item?.name}" th:data-id="${item?.id}">
+                                                                        <label class="mdl-textfield__label" for="sample1">新名称</label>
+                                                                    </div>
+                                                                    <!-- <input type="hidden" name="scope" th:value="${item?.scope}"> -->
+                                                                    <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                                                                    <!-- <input type="text" name="name" th:value="${item?.name}" />
+                                                                    <input type="hidden" name="scope" th:value="${item?.scope}" />
+                                                                    <input type="submit" value="修改" /> -->
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div><a th:href="@{'/album/'+${item?.id}+'/delete'}">删除</a></div> -->
+                                                        </div><!--img-box end-->
+                                                        </div><!--lightbox end-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col text-center materialdfenye" th:with="ps=${pages}">
+                                <ul class="pagination">
+                                  <li class="disabled">
+                                    <a th:href="@{/(page=${ps?.pre})}" aria-label="上一页">
+                                      <i class="material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                  </li>
+                                  <li th:class="${page eq ps.page} ? 'active'" th:each="page:${ps?.pages}">
+                                    <a th:href="@{/(page=${page})}" th:text="${page}">1
+                                       <span class="sr-only">(current)</span> 
+                                    </a>
+                                  </li>
+                                    <li><a th:href="@{/(page=${ps?.next})}" aria-label="下一页">
+                                      <i class="material-icons">keyboard_arrow_right</i>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </main>
+                </div>
+                <!--<script src="js/jquery-1.11.3.min.js"></script>
+                <script src="js/material.min.js"></script>
+                <script src="js/layout.js"></script>-->
+                <script src="../static/js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+                <script src="../static/js/material.min.js" th:src="@{/js/material.min.js}"></script>
+                <script src="../static/js/base.js" th:src="@{/js/base.js}"></script>
+                <script src="../static/js/getmdl-select.js" th:src="@{/js/getmdl-select.js}"></script>
+                <link rel="stylesheet" href="../static/js/messenger/css/messenger.css" th:href="@{/js/messenger/css/messenger.css}">
+			    <link rel="stylesheet" href="../static/js/messenger/css/messenger-theme-flat.css" th:href="@{/js/messenger/css/messenger-theme-flat.css}">
+			    <script src="../static/js/messenger/js/messenger.min.js" th:src="@{/js/messenger/js/messenger.min.js}"></script>
+			    <script src="../static/js/messenger/js/messenger-theme-flat.js" th:src="@{/js/messenger/js/messenger-theme-flat.js}"></script>
+                <script src="../static/js/dropzone.js" th:src="@{/js/dropzone.js}"></script>
+                <script src="../static/js/remote.js" th:src="@{/js/remote.js}"></script>
+                <script src="../static/js/iframeResizer.contentWindow.min.js" th:src="@{/js/iframeResizer.contentWindow.min.js}"></script>
+                <!--上传-->
+            </body>
+            <script>
+            $(function() {
+            	/* window.iFrameResizer = {
+            			targetOrigin: 'http://localhost:6021'
+        			} */
+            	function checkAndSend(message) {    
+            		if (!('parentIFrame' in window)) {
+                        console.log('No parentIFrame object yet...');
+                        setTimeout(checkAndSend(message), 16); // setTimeout(func, timeMS)
+                    } else {
+                        //var origin = location.pathname;
+                        window.parentIFrame.sendMessage(message);
+                        console.log('found parentIFrame object! Sent message.');
+                        return false;
+                    }
+                }
+
+                //checkAndSend();
+            	
+    			$(document).on("click","[data-url]",function(){
+    				console.log('ccccccccccc'+$(this).data("url"));
+    				checkAndSend("http://localhost:6017"+$(this).data("url"));
+    			});
+            });
+			</script>
+    <script id="tpl" type="text/plain">
+    <div class="img-box" data-id="{ id }" data-new="{ name }">
+        <div class="lightbox-item">
+            <img src="/test/{ name }" alt="">
+            <button id="demo-op1__{ id }__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+            <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-op1__{ id }__">
+                <li class="mdl-menu__item" name="reset_name">重命名</li>
+                <li class="mdl-menu__item">分享</li>
+                <li class="mdl-menu__item file_delete">删除</li>
+            </ul>
+            <div class="del-pic" name="{ date }checkbox" data-date="{ date }">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="fileids" value="{ id }" class="mdl-checkbox__input">
+                </label>
+            </div>
+        </div>
+        <div style="height: 43px;overflow:hidden;">
+            <div class="albumName"><input type="text" value="{ name }"></div>
+            <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                <form taction="/file/{ id }/update" method="post">
+                    <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                        <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" value="{ name }" data-id="{ id }">
+                        <label class="mdl-textfield__label" for="sample1">新名称</label>
+                    </div>
+                    <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                    
+                </form>
+            </div>
+        </div>
+        </div><!--img-box end-->
+
+    </script>
+    <script id="tpl2" type="text/plain">
+    <div name="" >
+        <div class="ptb-title-box">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" class="mdl-checkbox__input" id="{ id }" data-date="{ date }">
+                <span class="mdl-checkbox__label" text="{ date }">{ date }</span>
+            </label>
+            <div class="del-this-albums pull-left" style="display: none;">
+                <!--<i class="glyphicon glyphicon-remove"></i>--></div>
+            </div>
+            <div class="lightbox clearfix">
+                <div class="img-box" data-id="{ id }" data-new="{ name }">
+                    <div class="lightbox-item">
+                        <img src="/test/{ name }" alt="">
+                        <button id="demo-op1__{ id }__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+                        <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-op1__{ id }__">
+                            <li class="mdl-menu__item" name="reset_name">重命名</li>
+                            <li class="mdl-menu__item">分享</li>
+                            <li class="mdl-menu__item file_delete">删除</li>
+                        </ul>
+                        <div class="del-pic" name="{ date }checkbox" data-date="{ date }">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                <input type="checkbox" name="fileids" value="{ id }" class="mdl-checkbox__input">
+                            </label>
+                        </div>
+                    </div>
+                    <div style="height: 43px;overflow:hidden;">
+                        <div class="albumName"><input type="text" value="{ name }"></div>
+                        <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                            <form taction="/file/{ id }/update" method="post">
+                                <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                                    <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" value="{ name }" data-id="{ id }">
+                                    <label class="mdl-textfield__label" for="sample1">新名称</label>
+                                </div>
+                                <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    </div><!--img-box end-->
+                    </div><!--lightbox end-->
+            </div>
+    </script>
+
+</html>

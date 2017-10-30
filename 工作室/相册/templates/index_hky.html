@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="../static/fonts/material-icons.css">
+    <link rel="stylesheet" href="../static/css/build.css">
+</head>
+<body>
+    <div class="container">
+        <div class="home_add">
+            <i class="material-icons">add</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </div>
+        <div name="" th:each="element,stat: ${files}" class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="checkbox checkbox-info hky_margin">
+                    <input id="checkbox4" class="styled" type="checkbox" th:id="${'checkbox'+stat.index}" th:data-date="${element.key}">
+                    <label for="checkbox4">
+                        <span class="hky_span" th:text="${element.key}">2017年9月8日</span>
+                    </label>
+                </div>   
+            </div>
+        <!-- </div>
+        <div class="row"> -->
+            <!-- strat col-lg-3 col-md-3 col-sm-6 -->
+            <div class="col-lg-3 col-md-3 col-sm-6 hky_margin_a" th:each="item,row:${element.value}" th:data-id="${item?.id}">
+                <div class="hky_img">
+                    <a href="javascript:(0)">
+                        <img src="../static/images/banner1.jpg" alt="hky_img" class="img-responsive" th:src="@{/photo/{id}(id=${item?.id})}" th:alt="${item?.name}">
+                    </a>
+                    <div class="hky_hover">
+                        <div class="checkbox checkbox-info hky_position">
+                            <input id="checkbox4" class="styled" type="checkbox">
+                            <label for="checkbox4">
+                                <span class="hky_span"></span>
+                            </label>
+                        </div>
+                        <div class="hky_position_a">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle hky_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" th:id="demo-op1__${item.id}__">
+                                    <i class="material-icons">more_vert</i>
+                                </button>
+                                <ul class="dropdown-menu" th:for="demo-op1__${item.id}__">
+                                    <li><a href="#" class="chong" name="reset_name">重命名</a></li>
+                                    <li><a href="#">删除</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="style_hky">
+                        <div>banner1.jpg</div>
+                    </div>
+                </div>
+                <!-- end -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 text-center bottom_hky">
+                    <div class="flip">
+                        <ul class="flip_ul">
+                            <li class="flip_ul_li_active">
+                                <a href="javascript:void(0);">
+                                    <i class="material-icons">keyboard_arrow_left</i>
+                                </a>
+                            </li>
+                            <li class="flip_ul_li">
+                                <a href="javascript:void(0)">
+                                    1
+                                </a>
+                            </li>
+                            <li class="flip_ul_li">
+                                <a href="javascript:void(0)">
+                                    2
+                                </a>
+                            </li>
+                            <li class="flip_ul_li">
+                                <a href="javascript:void(0)">
+                                    3
+                                </a>
+                            </li>
+                            <li class="flip_ul_li">
+                                    <a href="javascript:void(0)">
+                                        ...
+                                    </a>
+                                </li>
+                            <li class="flip_ul_li_active">
+                                <a href="javascript:void(0);">
+                                    <i class="material-icons">keyboard_arrow_right</i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/js/jquery-3.1.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/index_hky.js"></script>
+    <script type="text/javascript">
+	    function changeState(el) {
+	        if (el.readOnly) el.checked=el.readOnly=false;
+	        else if (!el.checked) el.readOnly=el.indeterminate=true;
+	    }
+	</script>
+</body>
+</html>

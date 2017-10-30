@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div id="uploadFileDlg" class="easyui-dialog" style="width:800px;text-align:center;" closed="true">
+	<form id="uploadFileForm" method="post" style="width:100%;text-align:center;padding:20px 0;">
+		<input id="file" type="file" style="width:500px;display:inline-block;">
+		<button id="uploadBtn" class="easyui-linkButton" style="width:auto;display:inline-block;" type="button">上传</button> 
+	</form>
+	<div class="progress progress-bar-striped active" style="display:none;">
+		<div id="progressBar" class="progress-bar progress-bar-info" role="progressbar"
+		aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+		style="width:0%; background-color: #999;">
+		</div>
+	</div>
+	<table id="uploadBatchDg"></table>
+</div>
+
+<div id="pp" style="width:0%; background-color: #999;height:100px;">
+</div>
+
+<script src="../static/js/jquery-3.0.0.min.js" th:src="@{/js/jquery-3.0.0.min.js}"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

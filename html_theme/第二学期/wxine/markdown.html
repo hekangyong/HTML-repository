@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>markdown</title>
+</head>
+<body>
+<div id="test-editormd"></div>
+
+<script src="../static/js/jquery-1.11.3.min.js"></script>
+<!--markdown-->
+<link rel="stylesheet" href="../static/js/editor_md/css/editormd.css" />
+<script src="../static/js/editor_md/editormd.min.js"></script> 
+<script type="text/javascript">
+    var testEditor;
+
+    $(function() {
+        testEditor = editormd("test-editormd", {
+            width   : "100%",
+            height  : 500,
+            syncScrolling : "single",
+            path    : "../static/js/editor_md/lib/"
+        });
+    });            
+</script> 
+<!--markdown end-->
+</body>
+</html>

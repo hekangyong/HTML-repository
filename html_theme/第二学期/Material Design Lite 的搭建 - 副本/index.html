@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/material.min.css">
+	<script src="js/material.min.js"></script>
+	<link href="fonts/material-icons.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header hky_back">
+         <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">WXINE</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+               <a class="mdl-navigation__link hky_bofore" href="javascript:void(0);"><i class="material-icons">search</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">notifications</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">comment</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);">登陆/注册</a>
+            </nav>
+         </div>
+      </header>
+      <div class="mdl-layout__drawer">
+         <span class="mdl-layout-title">WXINE</span>
+         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="javascript:void(0);">首页</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">社群</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">课程</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">活动</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">任务</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">好友</a>
+         </nav>
+      </div>
+      <main class="mdl-layout__content">
+         <div class="page-content hky-back">
+            <div class="container">
+               <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone">
+                     <!-- 卡片一 开始 -->
+                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title card-bottom">
+                           <h2 class="title_size">发布</h2>
+                           <ul class="action">
+                              <li>
+                                 <a href="javascript:void(0);" class="hky_a hky_fx">
+                                    <i class="material-icons">content_copy</i>
+                                 </a>
+                              </li>
+                              
+                              <li>
+                                 <a href="javascript:void(0);" class="hky_a hky_fx" id="demo-menu-lower-right">
+                                    <i class="material-icons">more_vert</i>
+                                 </a>
+                                    
+                                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                                       <li class="mdl-menu__item">禁止言论</li>
+                                    </ul>                                    
+                              </li>
+                              
+                           </ul>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                           <textarea class="wp_text" data-auto-size="" placeholder="分享新鲜事……" name="content"></textarea>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border hky_mar"></div>
+                        <div class="card-footer">
+                           <a href="javascript:void(0);" class="hky_a"><i class="material-icons hky_icons">local_see</i></a>
+                              <a href="javascript:void(0);" id="demo-menu-top-left" class="but_hky">公开</a>
+                              <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"data-mdl-for="demo-menu-top-left">
+                                <li class="mdl-menu__item">公开</li>
+                                <li class="mdl-menu__item">保密</li>
+                                <li class="mdl-menu__item">好友</li>
+                              </ul>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored hky_but_right">
+                                 发布
+                              </button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- end -->
+
+                  <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-phone">
+
+                     <!-- 卡片二 -->
+
+                     <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div class="mdl-card__title hky_button">
+                           <span>网星客户端</span>
+                           <ul class="actions">
+                              <li class="hky_i">
+                                 <i class="material-icons">people</i>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                           <ul class="actions hky_margin">
+                              <li>
+                                 <i class="material-icons">more_vert</i>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                              Get Started
+                           </a>
+                        </div>
+                     </div>
+
+                     <!-- end -->
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .display{
+        display: none;
+    }
+    .open{
+        display: block !important;
+    }
+    .album_operate{
+        opacity: 0;
+    }
+    </style>
+</head>
+<body>
+    <form action="" method="post"> 
+        您喜欢的水果？<br /><br /> 
+        <label><input name="Fruit" type="checkbox" value="" class="jpgz"/>苹果 </label> 
+        <label><input name="Fruit" type="checkbox" value="" class="jpgz"/>桃子 </label> 
+        <label><input name="Fruit" type="checkbox" value="" class="jpgz"/>香蕉 </label> 
+        <label><input name="Fruit" type="checkbox" value="" class="jpgz"/>梨 </label> 
+    </form> 
+        <div class="album_operate">
+            你已选中了0个水果
+        </div>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script>
+        $(function(){
+            $('input').on('onlick', function(event){
+                $(".album_operate").addClass("open");
+            });
+        })
+    </script>
+</body>
+</html>

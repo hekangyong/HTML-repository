@@ -1,0 +1,12 @@
+$(document).ready(function(){
+    $(".chong").click(function(){
+        $(".hky-display").fadeIn();
+        $(".hky_display").fadeIn("show");
+        $(".hky_display").fadeIn(300);
+    });
+    $("#quxiao").click(function(){
+        $(".hky-display").fadeOut();
+        $(".hky-display").fadeOut("slow");
+        $(".hky-display").fadeOut(3000);
+      });
+});

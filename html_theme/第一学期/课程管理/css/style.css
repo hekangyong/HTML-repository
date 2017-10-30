@@ -1,0 +1,154 @@
+.logo{
+	color: #9a9a9a;
+	margin-top: 20px;
+}
+.back{
+	background-color: #9a9a9a;
+	width: 100%;
+	height: 2px;
+	opacity: 0.1;
+	margin-top: 10px;
+}
+.yanse{
+	background-color: #99f660;
+	text-align: center;
+	width: 13%;
+	height: 130px;
+	line-height: 150px;
+	color: white;
+	margin-top: 15px;
+	font-size: 20px;
+}
+.shuxue{
+	background-color: #26dcf2;
+	text-align: center;
+	width: 13%;
+	height: 130px;
+	line-height: 130px;
+	color: white;
+	margin-top: 15px;
+	margin-left: 3px;
+	font-size: 20px;
+}
+.yingyu{
+	background-color: #ef7422;
+	text-align: center;
+	width: 13%;
+	height: 160px;
+	color: white;
+	line-height: 160px;
+	margin-top: 15px;
+	margin-left: 3px;
+	font-size: 20px;
+}
+.lishi{
+	background-color: #eef525;
+	text-align: center;
+	width: 31%;
+	height: 100px;
+	color: white;
+	line-height: 100px;
+	margin-top: 15px;
+	margin-left: 3px;
+	font-size: 20px;
+}
+.shengwu{
+	background-color: #4aeee0;
+	text-align: center;
+	width: 28%;
+	height: 180px;
+	color: white;
+	line-height: 180px;
+	margin-top: 15px;
+	margin-left: 3px;
+	font-size: 20px;
+}
+.html{
+	background-color: #df79d9;
+	text-align: center;
+	width: 16%;
+	height: 250px;
+	line-height: 250px;
+	color: white;
+	position: relative;
+	bottom: 47px;
+}
+.javascript{
+	background-color: #00ce61;
+	text-align: center;
+	width: 10%;
+	height: 150px;
+	line-height: 150px;
+	color: white;
+	position: relative;
+	bottom: 47px;
+	left: 3px;
+}
+.bootstrap{
+	background-color: #c424ec;
+	text-align: center;
+	width: 13%;
+	height: 121px;
+	line-height: 121px;
+	color: white;
+	position: relative;
+	bottom: 18px;
+	left: 6px;
+}
+.jquery{
+	background-color: #143699;
+	text-align: center;
+	width: 20%;
+	height: 278px;
+	line-height: 278px;
+	color: white;
+	position: relative;
+	bottom: 76px;
+	left: 10px;
+}
+.php{
+	background-color: #979dae;
+	text-align: center;
+	width: 10.73%;
+	height: 278px;
+	line-height: 278px;
+	color: white;
+	position: relative;
+	bottom: 76px;
+	left: 12px;
+}
+
+.css{
+	background-color: #b20808;
+	text-align: center;
+	width: 16.73%;
+	height: 200px;
+	line-height: 200px;
+	color: white;
+	position: relative;
+	bottom: -2px;
+	left: 16px;
+}
+.java{
+	background-color: #122bc2;
+	text-align: center;
+	width: 10.93%;
+	height: 200px;
+	line-height: 200px;
+	color: white;
+	position: relative;
+	bottom: -2px;
+	left: 20px;
+}
+
+.qita{
+	background-color: #122bc2;
+	text-align: center;
+	width: 23.3%;
+	height: 97px;
+	line-height: 97px;
+	color: white;
+	position: relative;
+	bottom: 173px;
+	left: 190px;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aa</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/material.min.css">
+	<script src="js/material.min.js"></script>
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="fonts/material-icons.css" rel="stylesheet">
+   	<link rel="stylesheet" href="css/style_b.css">
+</head>
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header hky_back">
+         <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">WXINE</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+               <a class="mdl-navigation__link hky_bofore" href="javascript:void(0);"><i class="material-icons">search</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">notifications</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">comment</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);">登陆/注册</a>
+            </nav>
+         </div>
+      </header>
+      	<div class="mdl-layout__drawer">
+         	<span class="mdl-layout-title">WXINE</span>
+         	<nav class="mdl-navigation">
+            	<a class="mdl-navigation__link" href="javascript:void(0);">首页</a>
+            	<a class="mdl-navigation__link" href="javascript:void(0);">社群</a>
+            	<a class="mdl-navigation__link" href="javascript:void(0);">课程</a>
+            	<a class="mdl-navigation__link" href="javascript:void(0);">活动</a>
+            	<a class="mdl-navigation__link" href="javascript:void(0);">任务</a>
+            	<a class="mdl-navigation__link" href="javascript:void(0);">好友</a>
+         	</nav>
+      	</div>
+      	<main class="mdl-layout__content">
+    		<div class="page-content">
+    			<div class="container">
+    				<div class="mdl-grid" style="display: block;">
+		               	<div class="mdl-cell mdl-cell--12-col">
+		                  	<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+		                     	<div class="hky_card_title">
+		                        	<div class="tip">
+		                           		<span>修改课程</span>
+		                        	</div>
+		                     	</div>
+		                     	<div class="mdl-card__supporting-text">
+		                        	<div class="singe">
+		                           		<img src="images/banner8.jpg">
+		                        	</div>
+		                        	<div class="text1">
+		                        		<div class="aa">
+			                        		<form action="#">
+	  											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label hky_width">
+	    											<input class="mdl-textfield__input" type="text" id="sample3">
+	    											<label class="mdl-textfield__label" for="sample3">输入新的标题名称</label>
+	  											</div>
+											</form>
+											<form action="#">
+	              								<div class="mdl-textfield mdl-js-textfield hky_width1">
+	                								<textarea class="mdl-textfield__input" type="text" rows= "6" id="sample5" ></textarea>
+	                								<label class="mdl-textfield__label" for="sample5">请输入课程详情</label>
+	              								</div>
+	            							</form>
+            							</div>
+            							<div class="markdown" style="margin-top: 50px;"></div>
+            							<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_botton" name="d_info_full">
+     									   切换到MARKDOWN编辑模式
+    									</button>
+    									<button name="tuichumark" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_botton hky_but">切换正常模式</button>
+                    				</div>
+    									<div class="hky_basic">
+    										<a href="javascript:void(0);" class="hky_a"><i class="material-icons hky-icon">local_see</i></a>
+    										<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+  												<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+  												<span class="mdl-radio__label">无需验证</span>
+											</label>
+											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+  												<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+  												<span class="mdl-radio__label">需要验证</span>
+											</label>
+											<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+  												<input type="radio" id="option-3" class="mdl-radio__button" name="options" value="3">
+  												<span class="mdl-radio__label">禁止加入</span>
+											</label>
+    									</div>
+    									<div class="hky_botton_a">
+    										<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky-right">
+      											退出
+    										</button>
+    										<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+      											确定
+    										</button>
+    									</div>
+		                        	</div>
+		                     	</div>
+		                  	</div>
+		               	</div>
+		            </div>
+    			</div>
+    		</div>
+  		</main>
+    </div>
+
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+   	<script type="text/javascript" src="js/hky_a.js"></script>
+      <script type="text/javascript">
+      	
+         $("[name='d_info_full']").on("click", function(){  //完整发布
+            $("[name='simple']").hide();
+            $("[name='full']").slideDown();
+            $(".aa").slideUp();
+            $(".markdown").load("markdown.html", function(){  //load加载markdown
+                $(".markdown").slideDown();
+                try {componentHandler.upgradeDom();}catch(e){};
+            });
+          })
+       $("[name='tuichumark']").on("click", function(){  //完整发布
+            $("[name='simple']").hide();
+            $("[name='full']").slideDown();
+            $(".aa").slideDown();
+            $(".markdown").load("markdown.html", function(){  //load加载markdown
+                $(".markdown").slideUp();
+                try {componentHandler.upgradeDom();}catch(e){};
+            });
+          })
+      </script>
+</body>
+</html>

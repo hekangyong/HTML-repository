@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/material.min.css">
+	<script src="js/material.min.js"></script>
+	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+   <link href="fonts/material-icons.css" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header hky_back">
+         <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">WXINE</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+               <a class="mdl-navigation__link hky_bofore" href="javascript:void(0);"><i class="material-icons">search</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">notifications</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);"><i class="material-icons">comment</i></a>
+               <a class="mdl-navigation__link" href="javascript:void(0);">登陆/注册</a>
+            </nav>
+         </div>
+      </header>
+      <div class="mdl-layout__drawer">
+         <span class="mdl-layout-title">WXINE</span>
+         <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="javascript:void(0);">首页</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">社群</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">课程</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">活动</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">任务</a>
+            <a class="mdl-navigation__link" href="javascript:void(0);">好友</a>
+         </nav>
+      </div>
+      <main class="mdl-layout__content">
+         <div class="container">
+            <div class="title">
+               <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--12-col">
+                     <ol class="breadcrumb">
+                        <li>
+                           <a href="javascript:void(0);">首页</a>
+                        </li>
+                        <li class="activo">
+                           <a href="javascript:void(0);">课程</a>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <!-- 创建课程 -->
+            <div class="mdl-grid" style="display: block;">
+               <div class="mdl-cell mdl-cell--12-col">
+                  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                     <div class="hky_card_title">
+                        <div class="tip">
+                           <span>创建课程</span>
+                        </div>
+                     </div>
+                     <div class="mdl-card__supporting-text">
+                        <div class="singe">
+                           <img src="images/banner8.jpg">
+                        </div>
+                        <div class="text1">
+                        </div>
+                     </div>
+                     <div class="mdl-card__menu hky_menu">
+                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                           <i class="material-icons">share</i>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end -->
+            <div class="mdl-grid hky_title">
+               <div class="mdl-cell mdl-cell--12-col">
+                  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                     <div class="mdl-card__title">
+                        <ul class="hky_renwu">
+                           <li class="activa"><a href="javascript:void(0);">推荐的</a></li>
+                           <li class="activa_foca"><a href="javascript:void(0);">加入的</a></li>
+                           <li class="activa_foca"><a href="javascript:void(0);">管理的</a></li>
+                        </ul>
+                     </div>
+                     <div class="mdl-card__actions mdl-card--border hky_padding">
+                        <h2 class="jilu">5条记录</h2>
+                        <ul class="actions lv-actions">
+                           <li>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                 创建课程
+                              </button>
+                           </li>
+                           <li>
+                              <form action="#">
+                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable aaa">
+                                    <label class="mdl-button mdl-js-button mdl-button--icon hky_from" for="sample6">
+                                       <i class="material-icons">search</i>
+                                    </label>
+                                    <div class="mdl-textfield__expandable-holder">
+                                       <input class="mdl-textfield__input" type="text" id="sample6">
+                                       <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                                    </div>
+                                 </div>
+                              </form>
+                           </li>
+                           <li>
+                              <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+                                 <i class="material-icons fos-26">sort</i>
+                              </button>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="hky_llll">
+                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                        <li class="mdl-menu__item text-center">最后更新</li>
+                        <li class="mdl-menu__item text-center">创建时间</li>
+                        <li class="mdl-menu__item text-center">活跃度</li>
+                      </ul>
+                   </div>
+               </div>
+            </div>
+            <!-- end -->
+            <div class="mdl-grid hky-pos">
+               <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+               <!-- 卡片一 -->
+                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                     <div class="mdl-card__title mdl-card--expand"></div>
+                     <div class="mdl-card__supporting-text hky_size">
+                        <h2><a href="javascript:void(0);">Java创意项目设计</a></h2>
+                        <div class="hky-title"> 
+                           <i class="material-icons">info</i>
+                           <span class="hky_span">5位成员</span>
+                           <span>10条信息</span>
+                        </div>
+                        <small>Java创意项目设计</small>
+                        <a href="javascript:void(0);" class="hky_a mdl-js-ripple-effect mdl-js-button mdl-button">申请加入</a>
+                     </div> 
+                     <div class="mdl-card__actions mdl-card--border hky_dispaly">
+                        <form action="#">
+                           <div class="mdl-textfield mdl-js-textfield">
+                              <textarea class="mdl-textfield__input" type="text" rows= "5" id="sample5" ></textarea>
+                              <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                           </div>
+                           <div class="hky_right">
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_up">
+                                 取消
+                              </button>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                 发送
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="mdl-card__menu">
+                        <button id="demo-menu-lower-rightb" class="mdl-button mdl-js-button mdl-button--icon icon-color">
+                           <i class="material-icons cl-c">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-rightb">
+                          <li class="mdl-menu__item text-center">修改</li>
+                          <li class="mdl-menu__item text-center">删除</li>
+                          <li class="mdl-menu__item text-center">退出课程</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- end -->
+               </div>
+               <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--6-col-phone">
+               <!-- 卡片二 -->
+                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                     <div class="mdl-card__title mdl-card--expand"></div>
+                     <div class="mdl-card__supporting-text hky_size">
+                        <h2><a href="javascript:void(0);">Java创意项目设计</a></h2>
+                        <div class="hky-title"> 
+                           <i class="material-icons">info</i>
+                           <span class="hky_span">5位成员</span>
+                           <span>10条信息</span>
+                        </div>
+                        <small>Java创意项目设计</small>
+                        <a href="javascript:void(0);" class="hky_b mdl-js-ripple-effect mdl-js-button mdl-button">申请加入</a>
+                     </div> 
+                     <div class="mdl-card__actions mdl-card--border hky_dispalyb">
+                        <form action="#">
+                           <div class="mdl-textfield mdl-js-textfield">
+                              <textarea class="mdl-textfield__input" type="text" rows= "5" id="sample5" ></textarea>
+                              <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                           </div>
+                           <div class="hky_right">
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_upb">
+                                 取消
+                              </button>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                 发送
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="mdl-card__menu">
+                        <button id="demo-menu-lower-rightc" class="mdl-button mdl-js-button mdl-button--icon icon-color">
+                           <i class="material-icons cl-c">more_vert</i>
+                        </button>
+
+                     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-rightc">
+                       <li class="mdl-menu__item text-center">修改</li>
+                       <li class="mdl-menu__item text-center">删除</li>
+                       <li class="mdl-menu__item text-center">退出课程</li>
+                     </ul>
+                     </div>
+                  </div>
+                  <!-- end -->
+               </div>
+               <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                  <!-- 卡片三 -->
+                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                     <div class="mdl-card__title mdl-card--expand"></div>
+                     <div class="mdl-card__supporting-text hky_size">
+                        <h2><a href="javascript:void(0);">Java创意项目设计</a></h2>
+                        <div class="hky-title"> 
+                           <i class="material-icons">info</i>
+                           <span class="hky_span">5位成员</span>
+                           <span>10条信息</span>
+                        </div>
+                        <small>Java创意项目设计</small>
+                        <a href="javascript:void(0);" class="hky_c mdl-js-ripple-effect mdl-js-button mdl-button">申请加入</a>
+                     </div> 
+                     <div class="mdl-card__actions mdl-card--border hky_dispalyc">
+                        <form action="#">
+                           <div class="mdl-textfield mdl-js-textfield">
+                              <textarea class="mdl-textfield__input" type="text" rows= "5" id="sample5" ></textarea>
+                              <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                           </div>
+                           <div class="hky_right">
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_upc">
+                                 取消
+                              </button>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                 发送
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="mdl-card__menu">
+                         <button id="demo-menu-lower-rightd" class="mdl-button mdl-js-button mdl-button--icon icon-color">
+                           <i class="material-icons cl-c">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-rightd">
+                          <li class="mdl-menu__item text-center">修改</li>
+                          <li class="mdl-menu__item text-center">删除</li>
+                          <li class="mdl-menu__item text-center">退出课程</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <!-- end -->
+               </div>
+               <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+                     <div class="mdl-card__title mdl-card--expand"></div>
+                     <div class="mdl-card__supporting-text hky_size">
+                        <h2><a href="javascript:void(0);">Java创意项目设计</a></h2>
+                        <div class="hky-title"> 
+                           <i class="material-icons">info</i>
+                           <span class="hky_span">5位成员</span>
+                           <span>10条信息</span>
+                        </div>
+                        <small>Java创意项目设计</small>
+                        <a href="javascript:void(0);" class="hky_d mdl-js-ripple-effect mdl-js-button mdl-button">申请加入</a>
+                     </div> 
+                     <div class="mdl-card__actions mdl-card--border hky_dispalyd">
+                        <form action="#">
+                           <div class="mdl-textfield mdl-js-textfield">
+                              <textarea class="mdl-textfield__input" type="text" rows= "5" id="sample5" ></textarea>
+                              <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                           </div>
+                           <div class="hky_right">
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect hky_upd">
+                                 取消
+                              </button>
+                              <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                 发送
+                              </button>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="mdl-card__menu">
+                        <button id="demo-menu-lower-righte" class="mdl-button mdl-js-button mdl-button--icon icon-color">
+                           <i class="material-icons cl-c">more_vert</i>
+                        </button>
+
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-righte">
+                          <li class="mdl-menu__item text-center">修改</li>
+                          <li class="mdl-menu__item text-center">删除</li>
+                          <li class="mdl-menu__item text-center">退出课程</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+
+
+      <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+   <script type="text/javascript" src="js/hky.js"></script>
+</body>
+</html>

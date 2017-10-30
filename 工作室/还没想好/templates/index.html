@@ -1,0 +1,370 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>无标题文档</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/material.min.css" th:href="@{/css/material.min.css}">
+        <link rel="stylesheet" href="../static/fonts/material-icons.css" th:href="@{/fonts/material-icons.css}">
+        <link rel="stylesheet" href="../static/css/albums.css" th:href="@{/css/albums.css}">
+        <link href="../static/css/base.css" rel="stylesheet" th:href="@{/css/base.css}">
+        <link href="../static/css/dropzone.css" rel="stylesheet" th:href="@{/css/dropzone.css}">
+        <script src="../static/js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}"></script>
+        <script type="text/javascript" src="../static/js/jquery.lazy/jquery.lazy.min.js" th:src="@{/js/jquery.lazy/jquery.lazy.min.js}"></script>
+        <script>
+		$(function() {
+        	$('.lazy').Lazy();
+		});
+        </script>
+    </head>
+    <body>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <div th:replace="base :: layout_header"></div>
+            <div th:replace="base :: layout__drawer"></div>
+            <!--<div id="chat">尚未完善</div>-->
+            <main class="mdl-layout__content bg_color">
+            <div class="page-content">
+                <div class="mdl-button mdl-js-button mdl-js-ripple-effect home-add" id="dropzone_btn"><i class="material-icons">add</i></div>
+                <!-- Your content goes here -->
+                <div class="album_box mdl-shadow--4dp">
+                   
+                </div><!--album_box end-->
+                
+                <div class="mdl-grid mainPage albums-main" style="padding: 0;">
+
+
+                    <div class="mdl-cell mdl-cell--1-col mdl-cell--12-col-tablet mdl-cell--12-col-phone leftContent-leftList sm-leftConnet" name="smlc">
+                        <div class="mdl-card mdl-shadow--2dp leftContent-leftBox">
+                        <div class="leftContent-headerMedia">
+                              <div class="headerImg">
+                                <div class="bigImg"><img src="../images/banner25.jpg" alt="头像"></div>
+                            </div>
+                            <ul class="sm-drawer">
+                              <li>
+                                <a href="" id="smtips1"><i class="material-icons">description</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips1">文章</div>
+                              </li>
+                              <li>
+                                <a href="" id="smtips2"><i class="material-icons">forum</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips2">社群</div>
+                              </li>
+                              <li>
+                                <a href="" id="smtips3"><i class="material-icons">school</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips3">课程</div>
+                              </li>
+                              <li class="on">
+                                <a href="/" id="smtips4"><i class="material-icons">photo</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips4">照片</div>
+                              </li>
+                              <li>
+                                <a href="/albums" id="smtips5"><i class="material-icons">photo_library</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips5">相册</div>
+                              </li>
+                              <li>
+                                <a href="" id="smtips6"><i class="material-icons">supervisor_account</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips6">好友</div>
+                              </li>
+                              <li>
+                                <a href="" id="smtips7"><i class="material-icons">account_circle</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips7">账户</div>
+                              </li>
+                              <li>
+                                <a href="" id="smtips8"><i class="material-icons">settings</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips8">设置</div>
+                              </li>
+                              <li>
+                                <a href="javascript:void(0);" id="smtips9" name="toggle_big"><i class="material-icons">fullscreen</i></a>
+                                <div class="mdl-tooltip mdl-tooltip--right" for="smtips9">更多</div>
+                              </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div><!--smlc end-->
+                    
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone leftContent-leftList" name="biglc" style="display: none;">
+                      <div class="mdl-card mdl-shadow--2dp leftContent-leftBox">
+                        <div class="mdl-card_media listBanner">
+                          <div class="leftContent-leftIcon">
+                              <!-- <a href="javascript:void(0);" name="toggle_sm" class="toggle_sm"><i class="material-icons">fullscreen_exit</i></a> -->
+                              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect px-menu toggle_sm" name="toggle_sm">
+                                <i class="material-icons">fullscreen_exit</i>
+                              </button>
+                              <div class="IconMemu">
+                                  <button id="demo-menu-lower-right10" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect px-menu ">
+                                      <i class="material-icons">share</i>
+                                    </button>
+                                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right10">
+                                      <li class="mdl-menu__item">分享此社群</li>
+                                    </ul>
+                                    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pc-menu">
+                                      <i class="material-icons">more_vert</i>
+                                    </button>
+                                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                                      <li class="mdl-menu__item">退出社群</li>
+                                      <li class="mdl-menu__item">创建社群</li>
+                                    </ul>
+                                </div>  
+                             </div>
+                            <div class="leftContent-leftImg"><img src="../images/banner25.jpg"></div>
+                        </div>
+                        <div class="leftContent-headerMedia">
+                            <div class="headerImg">
+                              <div class="bigImg"><img src="../images/banner25.jpg" alt="头像"></div>
+                                <div class="userText m-t-10">
+                                  <small>1 个成员-公开分享</small> 
+                                </div>
+                            </div>
+                            <div class="communityName">
+                              <a href="#">教科研项目</a>
+                            </div>
+                            <div class="communityIntro">本项目设计一种大规模分布式低成本Java EE企业项目架构</div>
+                            <div class="communityJoin">
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                    关注
+                                </button>
+                            </div>
+                            <div class="leftContent-drop-menu">
+                              <div class="drop-title">板块<i class="material-icons drop-open">arrow_drop_down</i></div>
+                              <ul class="drop-down" style="display:none;">
+                                <li class="active"><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                                <li><a href="#">教科研项目</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                      </div>
+                    </div><!--biglc end-->
+
+
+
+
+                    <div class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone photos-card" style="padding-left: 0; transition: 0.3s;">
+                        <!--photos-card-->
+                        <div class="photos-heading">
+                        </div>
+                        <div class="photos-body">
+                            <form th:action="@{/album/create}" method="post">
+                                <div class="create_album" name="create_album">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label photo-name">
+                                        <input class="mdl-textfield__input" type="text" id="name" name="name">
+                                        <label class="mdl-textfield__label" for="name">相册名：</label>
+                                    </div>
+                                    <div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth">
+                                            <input class="mdl-textfield__input" type="text" id="scope_input" value="" readonly tabIndex="-1">
+                                            <input name="scope" type="hidden">
+                                            <label for="scope_input" class="mdl-textfield__label">请选择分享方式</label>
+                                            <ul for="scope_input" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">公开</li>
+                                                <li class="mdl-menu__item">保密</li>
+                                                <li class="mdl-menu__item" name="friend_btn">指定好友</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fullwidth friend" name="friend">
+                                            <input class="mdl-textfield__input" type="text" id="sample2" value="" readonly tabIndex="-1">
+                                            <label for="sample2" class="mdl-textfield__label">请选择指定的好友</label>
+                                            <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                                <li class="mdl-menu__item">好友1</li>
+                                                <li class="mdl-menu__item">好友2</li>
+                                                <li class="mdl-menu__item">好友3</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- <input type="text" name="friend" /> -->
+                                    <input type="submit" value="创建" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"/>
+                                </div>
+                                <div class="photos">
+                                    <div class="pt-body">
+                                        <div id="dropzone" class="dropzone">
+                                            <div class="dz-default dz-message"><span></span></div>
+                                        </div>
+
+
+                                        <!-- aaaa -->
+                                        <div name="" th:each="element,stat: ${files}">
+                                            <div class="ptb-title-box">
+                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                    <input type="checkbox" class="mdl-checkbox__input" th:id="${'checkbox'+stat.index}" th:data-date="${element.key}">
+                                                    <span class="mdl-checkbox__label" th:text="${element.key}">2017年2月27日</span>
+                                                </label>
+                                                <div class="del-this-albums pull-left" style="display: none;">
+                                                    <!--<i class="glyphicon glyphicon-remove"></i>--></div>
+                                                </div>
+                                                <div class="lightbox clearfix">
+                                                    <div class="img-box" th:each="item,row:${element.value}" th:data-id="${item?.id}">
+                                                        <div class="lightbox-item">
+                                                            <img src="../static/img/banner1.jpg" th:src="@{/photo/{id}(id=${item?.id})}" th:alt="${item?.name}">
+                                                            <button th:id="demo-op1__${item.id}__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+                                                            <i class="material-icons">more_vert</i>
+                                                            </button>
+                                                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" th:for="demo-op1__${item.id}__">
+                                                                <li class="mdl-menu__item" name="reset_name">重命名</li>
+                                                                <li class="mdl-menu__item">分享</li>  <!-- 可有可无 -->
+                                                                <li class="mdl-menu__item file_delete">删除</li>
+                                                            </ul>
+                                                            <div th:text="${item?.status}"></div>
+                                                            <div class="del-pic" th:name="|${item?.cdate}${'checkbox'+row.index}|" th:data-date="${item?.cdate}">
+                                                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                                                    <input type="checkbox" name="fileids" th:value="${item?.id}" class="mdl-checkbox__input">
+                                                                    <!-- <span class="mdl-checkbox__label" th:text="${item?.cdate}">2017年2月27日</span> -->
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div style="height: 43px;overflow:hidden;">
+                                                            <div class="albumName"><!-- <a href="javascript:void();" th:text="${item?.name}" >banner1.jpg</a> <-->
+                                                                <input type="text" value="" th:value="${item?.name}">
+                                                            </div>
+                                                            <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                                                                <form th:action="@{'/file/'+${item?.id}}+'/update'" method="post">
+                                                                    <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                                                                        <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" th:value="${item?.name}" th:data-id="${item?.id}">
+                                                                        <label class="mdl-textfield__label" for="sample1">新名称</label>
+                                                                    </div>
+                                                                    <!-- <input type="hidden" name="scope" th:value="${item?.scope}"> -->
+                                                                    <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                                                                    <!-- <input type="text" name="name" th:value="${item?.name}" />
+                                                                    <input type="hidden" name="scope" th:value="${item?.scope}" />
+                                                                    <input type="submit" value="修改" /> -->
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div><a th:href="@{'/album/'+${item?.id}+'/delete'}">删除</a></div> -->
+                                                        </div><!--img-box end-->
+                                                        </div><!--lightbox end-->
+                                                    </div>
+                                                    <!-- aaa-end -->
+
+                                                    
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col text-center materialdfenye" th:with="ps=${pages}">
+                                <ul class="pagination">
+                                  <li class="disabled">
+                                    <a th:href="@{/(page=${ps?.pre})}" aria-label="上一页">
+                                      <i class="material-icons">keyboard_arrow_left</i>
+                                    </a>
+                                  </li>
+                                  <li th:class="${page eq ps.page} ? 'active'" th:each="page:${ps?.pages}">
+                                    <a th:href="@{/(page=${page})}" th:text="${page}">1
+                                       <span class="sr-only">(current)</span> 
+                                    </a>
+                                  </li>
+                                    <li><a th:href="@{/(page=${ps?.next})}" aria-label="下一页">
+                                      <i class="material-icons">keyboard_arrow_right</i>
+                                    </a>
+                                  </li>
+                                </ul>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+                                <div th:replace="base :: footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    </main>
+                </div>
+                <!--<script src="js/jquery-1.11.3.min.js"></script>
+                <script src="js/material.min.js"></script>
+                <script src="js/layout.js"></script>-->
+                <script src="../static/js/material.min.js" th:src="@{/js/material.min.js}"></script>
+                <script src="../static/js/base.js" th:src="@{/js/base.js}"></script>
+                <script src="../static/js/getmdl-select.js" th:src="@{/js/getmdl-select.js}"></script>
+                <link rel="stylesheet" href="../static/js/messenger/css/messenger.css" th:href="@{/js/messenger/css/messenger.css}">
+			    <link rel="stylesheet" href="../static/js/messenger/css/messenger-theme-flat.css" th:href="@{/js/messenger/css/messenger-theme-flat.css}">
+			    <script src="../static/js/messenger/js/messenger.min.js" th:src="@{/js/messenger/js/messenger.min.js}"></script>
+			    <script src="../static/js/messenger/js/messenger-theme-flat.js" th:src="@{/js/messenger/js/messenger-theme-flat.js}"></script>
+                <script src="../static/js/dropzone.js" th:src="@{/js/dropzone.js}"></script>
+                <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+                
+                <!--上传-->
+            </body>
+    <script id="tpl" type="text/plain">
+    <div class="img-box" data-id="{ id }" data-new="{ name }">
+        <div class="lightbox-item">
+            <img src="/test/{ name }" alt="">
+            <button id="demo-op1__{ id }__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+            <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-op1__{ id }__">
+                <li class="mdl-menu__item" name="reset_name">重命名</li>
+                <li class="mdl-menu__item">分享</li>
+                <li class="mdl-menu__item file_delete">删除</li>
+            </ul>
+            <div class="del-pic" name="{ date }checkbox" data-date="{ date }">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                    <input type="checkbox" name="fileids" value="{ id }" class="mdl-checkbox__input">
+                </label>
+            </div>
+        </div>
+        <div style="height: 43px;overflow:hidden;">
+            <div class="albumName"><input type="text" value="{ name }"></div>
+            <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                <form taction="/file/{ id }/update" method="post">
+                    <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                        <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" value="{ name }" data-id="{ id }">
+                        <label class="mdl-textfield__label" for="sample1">新名称</label>
+                    </div>
+                    <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                    
+                </form>
+            </div>
+        </div>
+        </div><!--img-box end-->
+
+    </script>
+    <script id="tpl2" type="text/plain">
+    <div name="" >
+        <div class="ptb-title-box">
+            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                <input type="checkbox" class="mdl-checkbox__input" id="{ id }" data-date="{ date }">
+                <span class="mdl-checkbox__label" text="{ date }">{ date }</span>
+            </label>
+            <div class="del-this-albums pull-left" style="display: none;">
+                <!--<i class="glyphicon glyphicon-remove"></i>--></div>
+            </div>
+            <div class="lightbox clearfix">
+                <div class="img-box" data-id="{ id }" data-new="{ name }">
+                    <div class="lightbox-item">
+                        <img src="/test/{ name }" alt="">
+                        <button id="demo-op1__{ id }__" type="button" class="mdl-button mdl-js-button mdl-button--icon mdl-card__menu">
+                        <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-op1__{ id }__">
+                            <li class="mdl-menu__item" name="reset_name">重命名</li>
+                            <li class="mdl-menu__item">分享</li>
+                            <li class="mdl-menu__item file_delete">删除</li>
+                        </ul>
+                        <div class="del-pic" name="{ date }checkbox" data-date="{ date }">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
+                                <input type="checkbox" name="fileids" value="{ id }" class="mdl-checkbox__input">
+                            </label>
+                        </div>
+                    </div>
+                    <div style="height: 43px;overflow:hidden;">
+                        <div class="albumName"><input type="text" value="{ name }"></div>
+                        <div class="po_re hide" name="reset_form" style="margin-top: 6px;">
+                            <form taction="/file/{ id }/update" method="post">
+                                <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+                                    <input class="mdl-textfield__input" type="text" id="sample1" name="item_name" value="{ name }" data-id="{ id }">
+                                    <label class="mdl-textfield__label" for="sample1">新名称</label>
+                                </div>
+                                <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn" id="update_file" type="button">修改</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    </div><!--img-box end-->
+                    </div><!--lightbox end-->
+            </div>
+    </script>
+
+</html>

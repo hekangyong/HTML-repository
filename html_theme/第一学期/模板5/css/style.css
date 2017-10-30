@@ -1,0 +1,399 @@
+body{
+	font-family: 微软雅黑;
+}
+.back{
+	background-image: url("../images/bella-firenze-header.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.nav-bar .list-inline .li{
+	padding-left: 36px;
+}
+.nav-bar .list-inline li{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.nav-bar .list-inline a{
+	color: rgba(255, 255, 255, 0.71);
+	text-decoration: none;
+	font-size: 17px;
+}
+.nav-bar .list-inline a:hover{
+	color: #bda881
+}
+#svg {
+    display: block;
+    background: url(../images/bella-firenze-logo-light.svg)no-repeat center center;
+    width: 200px;
+    height: 90px;
+}
+.img1{
+	padding-top: 295px;
+	padding-bottom: 295px;
+}
+.about h2{
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+.lead{
+	font-size: 21px;
+	margin-bottom: 50px;
+}
+.margin-top{
+	margin: 50px 0;
+	position: relative;
+	top: 40px;
+}
+
+
+
+/*修改网页原样式*/
+.aa .row{
+	margin-right: 0px !important;
+}
+.back2 .row{
+	margin-right: 0px !important;
+}
+.back3 .row{
+	margin-right: 0px !important;
+}
+.back2 h2{
+	margin-top: 0px;
+    margin-bottom: 0px;
+}
+.back2 p{
+	margin: 0 0 0;
+}
+.margin-top2 h3{
+	margin-bottom: 0px;
+}
+/*end*/
+
+
+
+.aa{
+	margin-top: 100px;
+}
+.lead1{
+	font-size: 21px;
+	margin: 30px 0;
+}
+.back2{
+	background-image: url("../images/bf-dishes-06.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 140px;
+}
+.back2-1{
+	background: rgba(45,48,53,0.7);
+	color: #fff;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.margin-top1{
+	margin-top: 50px;
+}
+.margin-top2 .p{
+	margin-top: 50px;
+}
+.labe1{
+	background-color: #bda881;
+	font-size: 14px;
+	border-radius: 0;
+	font-weight: 500;
+	padding: .2em .6em.3em;
+	line-height: 1;
+	text-align: center;
+}
+.p1{
+	margin-top: 10px!important;
+}
+.back3{
+	background-image: url("../images/bf-events-bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 200px;
+}
+.labe2{
+	font-size: 21px;
+	font-weight: 500;
+	margin-top: 20px;
+}
+.margin-top3{
+	margin-top: 46px;
+}
+.bella{
+	border: 1px solid #bda881;
+	margin-bottom: 20px;
+	margin-top: 30px
+}
+.muted{
+	color: #777;
+}
+.make{
+	font-weight: 500px;
+	margin-top: 20px;
+}
+.back4{
+	background-image: url("../images/bf-recommend-bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: #fff;
+	padding-top: 60px;
+	padding-bottom: 90px;
+}
+.back4-1{
+	background-color: #fff;
+	color: #000;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+}
+.sushi{
+	margin-bottom: 20px;
+}
+.accent{
+	margin-top: 15px;
+}
+.price{
+	color: #bda881;
+	font-weight: 900;
+	border-bottom: 1px solid #bda881;
+	padding-bottom: 5px;
+}
+.bb{
+	margin-top: 50px;
+}
+.back5{
+	background-image: url("../images/bf-menu-bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 170px;
+	padding-bottom: 200px;
+	color: #fff;
+}
+.lead2{
+	font-size: 18px;
+	line-height: 1.4;
+	font-weight: 300;
+	margin-top: 20px;
+}
+.margin-top4{
+	margin-top: 30px;
+}
+.labe3{
+	background-color: #bda881;
+	font-size: 21px;
+	color: #fff;
+	line-height: 1;
+	padding: .2em .6em .3em;
+}
+.acc{
+	margin-top: 90px;
+}
+.acc1{
+	color: #bda881;
+	font-weight: 900;
+}
+.bottom{
+	font-size: 18px;
+	font-weight: 500;
+	border-bottom: 1px solid #bda881;
+	padding-bottom: 10px;
+}
+.top{
+	margin-top: 50px;
+}
+.btn1{
+	border: 1px solid #bda881;
+	padding: 10px 30px 10px;
+	text-decoration: none;
+	color: #bda881;
+}
+.btn1:focus{
+	text-decoration: none;
+	color: #bda881;
+}
+.btn1:hover{
+	color: #fff;
+	background-color: #bda881;
+	border-color: #bda881;
+	text-decoration: none;
+}
+.margin-top-50{
+	margin-top: 70px;
+}
+.back6{
+	background-image: url("../images/bf-events-bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 170px;
+	padding-bottom: 130px;
+}
+.cook{
+	margin-bottom: 20px;
+	font-weight: 300;
+	line-height: 1.4;
+	font-size: 18px;
+}
+.img-thu{
+	border: 2px solid #ddd;
+	background-color: #FFF;
+	margin-top: 40px;
+}
+.img-thu1{
+	margin-top: 40px;
+}
+.btn2{
+	margin-top: 26px;
+	margin-left: 20px;
+}
+.back7{
+	background-image: url("../images/bf-fresh-food-bg.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	color: #fff;
+}
+.come{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-size: 18px;
+	font-weight: 300;
+}
+.btn3{
+	border: 1px solid #fff;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 30px 10px;
+}
+.btn3:focus{
+	text-decoration: none;
+	color: #bda881;
+}
+.btn3:hover{
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+	text-decoration: none;
+}
+.dizhi{
+	margin-top: 170px;
+}
+.cooker{
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+.top-top{
+	margin-top: 60px;
+}
+.btn5{
+	border: 1px solid #bda881;
+	color: #bda881;
+	padding: 10px 30px 10px;
+	text-decoration: none;
+}
+.btn5:focus{
+	text-decoration: none;
+	color: #bda881;
+}
+.btn5:hover{
+	color: #fff;
+	background-color: #bda881;
+	border-color: #bda881;
+	text-decoration: none;
+}
+.top-btn{
+	margin-top: 30px;
+	margin-bottom: 170px;
+}
+.back8{
+	background-color: #2d3035;
+	color: #fff;
+	padding-top: 150px;
+	padding-bottom: 150px;
+}
+.so{
+	font-size: 18px;
+	margin-top: 20px;
+}
+.input{
+	margin-top: 10px;
+}
+.top-mar{
+	margin-top: 30px;
+}
+.input1{
+	margin-top: 30px;
+}
+.back9{
+	background-color: #bda881;
+	padding-top: 160px;
+	padding-bottom: 160px;
+	color: #fff;
+}
+.active1{
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.4;
+	margin-top: 20px;
+}
+.touch{
+	margin-top: 40px;
+}
+.fuolu{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size: 21px;
+	font-weight: 300;
+	line-height: 1.4;
+}
+.com{
+	color: #fff;
+	text-decoration: 
+}
+.com:hover{
+	color: #000;
+	text-decoration: none;
+}
+.com:focus{
+	color: #000;
+	text-decoration: none;
+}
+.list-style li{
+	list-style: none;
+	margin-left: -35px;
+	margin-top: 5px;
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 1.4;
+}
+.footer{
+	margin-top: 60px;
+}
+.list-inline li a i{
+	font-size: 21px;
+	border: 1px solid #000;
+	color: #000;
+	text-decoration: none;
+	padding: 5px 10px 5px;
+	margin-top: 30px;
+}
+.list-inline li a i:hover{
+	border: 1px solid #bda881;
+	color: #bda881;
+	text-decoration: none;
+}
+.p2{
+	margin-bottom: 20px;
+}

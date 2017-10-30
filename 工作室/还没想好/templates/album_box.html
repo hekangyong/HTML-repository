@@ -1,0 +1,17 @@
+<div class="btitle">
+	<span>添加到</span> <i class="material-icons" name="btn_album_box_close">close</i>
+</div>
+<ul class="album_list" th:each="item,row:${pages?.items}">
+	<li th:data-id="${item?.id}" class="album_target"><a href="#">
+			<div class="album_show">
+				<img src="images/banner1.jpg" th:src="${item?.cover}" alt="">
+			</div>
+			<div class="album_info">
+				<p class="title" th:text="${item?.name}">新建相册</p>
+				<p class="time" th:text="__${#dates.format(item.ctime, 'yyyy-MM-dd')}__" style="display:inline;">
+					2017-04-27 - 
+				</p>
+				<span th:text="__${item?.getPhotos().size()}__张">3张</span>
+			</div>
+	</a></li>
+</ul>

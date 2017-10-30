@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">hello world</p>
+    <p id="heh" style="display:none">hello world</p>
+    <button type="button" onclick="first()">点击</button>
+    <button type="button" onclick="second()">点击2</button>
+    
+    <script>
+        function first(){
+            document.getElementById("demo").innerHTML="hhhhh";
+        }
+        function second(){
+            var third = document.getElementById("heh");
+            third.style.display="block";
+        }
+    </script>
+</body>
+</html>

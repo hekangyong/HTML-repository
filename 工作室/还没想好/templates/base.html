@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+
+<head xmlns:th="http://www.thymeleaf.org"></head>
+
+<body>
+    <!-- publishbox -->
+    <form action="info_create.htm" th:action="@{/info}" method="post" th:fragment="publishbox">
+        <div class="mdl-card mdl-shadow--2dp publish_box" style="overflow: inherit;">
+            <!--这是一个发布框-->
+            <div class="card-header">
+                <div class="media">
+                    <div class="pull-left">
+                        <img class="lv-img" src="../static/images/default-user.jpg" th:src="${(sessuser?.logo != null && !#strings.isEmpty(sessuser?.logo)) ? sessuser?.logo : '/images/default-user.jpg'}" th:alt="${sessuser?.name}">
+                    </div>
+                    <div class="media-body m-t-15">
+                        <h2 th:text="${sessuser?.name}">用户名称</h2>
+                    </div>
+                    <div class="choseList">
+                        <div class="mdl-selectfield mdl-js-selectfield selectList is-dirty is-upgraded" data-upgraded=",MaterialSelectfield">
+                            <select class="mdl-selectfield__select" id="professsion" name="professsion" style="font-size:13px;line-height:19px;">
+                                <option value="public">公开</option>
+                                <option value="private">保密</option>
+                                <option value="friends">好友</option>
+                            </select>
+                            <div class="mdl-selectfield__icon"><i class="material-icons">arrow_drop_down</i></div>
+                            <label class="mdl-selectfield__label" for="professsion">公开</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-tip">
+                <div class="Iconsright">
+                    <a href="javascript:void(0);" title="进入Markdown编辑" class="release"><i class="material-icons release">crop_free</i></a>
+                </div>
+            </div>
+            <div class="card-textarea">
+                <textarea class="wp-text" data-auto-size="" placeholder="分享新鲜事……" name="content"></textarea>
+            </div>
+            <div class="bottomIcon">
+                <ul>
+                    <li><a href="javascript:void(0);"><i class="material-icons">photo_camera</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="material-icons">play_circle_filled</i></a></li>
+                    <li><a href="javascript:void(0);"><i class="material-icons">link</i></a></li>
+                </ul>
+            </div>
+            <div class="box-bottom">
+                <div class="announc">
+                    <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">announcement</i>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                        <li class="mdl-menu__item">禁止评论</li>
+                    </ul>
+                </div>
+                <div class="push-button">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        发布
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- publishbox end-->
+    <!-- infocard -->
+    <div class="infocard-mdl-card mdl-shadow--2dp" name="full-card" th:fragment="infocard" th:each="info,subrow:${map.value}">
+        <!--这是一个完整的卡片信息-->
+        <div class="cardTop">
+            <div class="cardTopTitle">
+                <div class="bar"> <a href="javascript:void(0);" title="社群名称" th:title="${info?.community?.name}" th:text="${info?.community?.name}">社群名称</a> <span class="material-icons">whatshot</span> </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="detailMenu">
+                <button id="demo-menu-lower-right" th:id="|menu-right${row.index}${subrow.index}|" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right" th:for="|menu-right${row.index}${subrow.index}|">
+                    <li class="mdl-menu__item"><a href="javascript:void(0);" th:href="@{/info/{id}(id=${info?.id})}">该信息的详情</a></li>
+                    <li class="mdl-menu__item"><a th:href="@{'/info/'+${info?.id}+'/delete'}" class="delete_a">删除</a></li>
+                    <li class="mdl-menu__item" name="btn_update" id="gotop1"><a href="javascript:void(0);" th:href="@{'/info/'+${info?.id}+'/edit'}">修改</a></li>
+                </ul>
+            </div>
+            <a class="face" title="用户头像" href="javascript:void(0);">
+                <img alt="用户头像" src="../static/images/logo.png" th:src="${(info?.user?.logo != null && !#strings.isEmpty(info?.user?.logo)) ? info?.user?.logo : '/images/default-user.jpg'}" th:alt="${info?.user?.name}">
+            </a>
+            <div class="right">
+                <div class="user">
+                    <header>
+                        <div class="userName"><a title="用户名" href="javascript:void(0);" th:text="${info?.user?.name}">用户名</a></div>
+                        <div class="stateInfo"><span class="shareState" th:text="${info?.scope}">
+            公开分享</span>-<span class="shareTime" th:text="${#dates.format(info?.ctime, 'yyyy-MM-dd')}">2017-2-27</span>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+        <div class="content_card">
+            <div class="Jcontent" name='infobody'>
+                <div class="content-title index-title" th:text="${info?.title}">文章标题</div>
+                <div class="Jtext" th:text="${info.basiccontent}">文章详情</div>
+            </div>
+            <span class="more Jreadall"><a href="javascript:void(0);" title="阅读完整" style="display: none;">完整阅读</a></span>
+        </div>
+        <div class="actionBlock">
+            <div class="praise" name="Jilike" title="我喜欢" data-type="info"> <span class="line"> <span class="add">+</span> <span>0</span> </span>
+            </div>
+            <div class="forward Dg" name="Jshare" title="分享" data-type="info"> <span class="line"> <span class="material-icons reply">reply</span> <span>0</span> </span>
+            </div>
+            <div class="downArrow Dg">
+                <span class="line"><div class="material-icons icon">arrow_drop_down</div></span>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="borderTop"></div>
+            <div class="commentNum">
+                <div class="com" name="LoadComments" title="加载更多评论" data-type="info" id="comment-number">
+                    <span class="word"> <span th:text="${info?.cmcount}">0</span> <span>条评论</span> </span>
+                    <div class="icon"> <i class="material-icons">arrow_drop_down</i> </div>
+                </div>
+                <span class="info_id" hidden="hidden" th:text=${info?.id}></span>
+                <div class="wcl-list" name="comment_load_box">
+                    <ul name="JCommentUl" class="comment-ul" th:remove="all-but-first">
+                        <li th:each="citem:${info?.comments}">
+                            <a target="_blank" href="javascript:void(0);" title="网信" th:title="${citem?.user?.name}" th:href="@{'/user/'+${citem?.user?.id}}">
+                                <img width="28px" height="28px" class="userimage" src="../static/images/logo.png" alt="网信" th:src="${(citem?.user?.logo != null && !#strings.isEmpty(citem?.user?.logo)) ? citem?.user?.logo : '/images/default-user.jpg'}" th:alt="${citem?.user?.name}">
+                            </a>
+                            <div class="userdiv">
+                                <div class="user-info">
+                                    <div class="name">
+                                        <a target="_blank" href="javascript:void(0);" th:href="@{'/u/'+${citem?.user?.id}}" title="网信" th:text="${citem?.user?.name}">网信</a>
+                                    </div>
+                                    <div class="time" th:text="${#dates.format(citem.ctime, 'yyyy-MM-dd')}">2017-02-10</div>
+                                </div>
+                                <!-- <div class="user-replay">
+                <span class="replay" title="回复">回复</span> 
+                <span class="report"><a href="javascript:void(0);" title="举报不良信息"><i class="report-icon"></i></a></span>
+              </div> -->
+                            </div>
+                            <div class="text" th:text="${citem?.content}">评论详情。</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="commentBox">
+                <div class="box Jinput">发表评论…</div>
+                <div class="Jcommentform comment-form" style="display: none;">
+                    <form name="fm_info_cm" method="post" action="info_cm_save.htm" th:action="@{'/info/'+${info?.id}+'/comment'}">
+                        <a href="javascript:void(0);"><img class="userimage" alt="hhh" src="../static/images/logo.png" height="28px" width="28px" th:src="${(sessuser.logo != null && !#strings.isEmpty(sessuser.logo)) ? sessuser.logo : '/images/default-user.jpg'}" th:alt="${sessuser?.name}"></a>
+                        <textarea class="textarea" name="content" style="margin-top: 0px; margin-bottom: 0px; height: 36px;width:100%;"></textarea>
+                        <div class="clearfix">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect sendBtn" type="button" name="submit">发布评论</button>
+                            <button class="Jformhide mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect cancelBtn" type="button">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--这是一个完整的卡片信息 end-->
+    <!-- infocard end-->
+    <!-- footer -->
+    <footer id="footer" th:fragment="footer">
+        Copyright © 2017 youkke.com
+        <ul class="footer_f-menu">
+            <li><a href="javascript:void(0);">首页</a></li>
+            <li><a href="javascript:void(0);">隐私权</a></li>
+            <li><a href="javascript:void(0);">服务条款</a></li>
+            <li><a href="javascript:void(0);">发送反馈</a></li>
+            <li><a href="javascript:void(0);">常见问题</a></li>
+            <li><a href="javascript:void(0);">帮助</a></li>
+            <li><a href="javascript:void(0);">联系我们</a></li>
+        </ul>
+    </footer>
+    <!-- footer end-->
+    <!-- pagination-->
+    <div class="mdl-cell mdl-cell--12-col text-center materialdfenye" th:fragment="pagination">
+        <ul class="pagination">
+            <li class="disabled">
+                <a href="?page=1" aria-label="上一页">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                </a>
+            </li>
+            <li class="active">
+                <a href="?page=1">1
+        <!-- <span class="sr-only">(current)</span> -->
+      </a>
+            </li>
+            <li>
+                <a href="?page=2">2</a>
+            </li>
+            <li><a href="?page=3">3</a>
+            </li>
+            <li><a href="?page=4">4</a>
+            </li>
+            <li><a href="?page=5">5</a>
+            </li>
+            <li>
+                <a href="?page=2" aria-label="下一页">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- pagination end-->
+    <!-- comcard-->
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--6-col-phone" th:fragment="comcard" th:each="item, row:${communities?.items}">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="card profile-view">
+                <button th:id="|demo-menu-lower-right${row?.index}|" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pv-menu">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect actions right-menu" th:for="|demo-menu-lower-right${row?.index}|" for="demo-menu-lower-right">
+                    <li class="mdl-menu__item" th:data-url="|/community/${item?.id}/edit|" name='loadbox'>修改</li>
+                </ul>
+                <div class="pv-header" style="background-image:url('../static/images/banner4.jpg')" th:style="|background-image:url(${item?.banner})|"></div>
+                <div class="pv-body">
+                    <h2><a href="javascript:void(0);" th:text="${item?.name}" th:href="@{'/community/'+${item?.id}}">社群名称</a></h2>
+                    <div class="pv-info">
+                        <i class="material-icons estate red">block</i>
+                        <span class="p-r-5" th:text="|${item?.usercount}个成员|">1 个成员</span><span th:text="|${item?.infocount}条信息|">0 条信息</span>
+                    </div>
+                    <small title="text" th:title="${item?.content}" th:text="${item?.content}">社群介绍</small>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent pv-follow-btn" th:id="|inputps${row?.index}|" data-join>
+                        加入
+                    </button>
+                </div>
+                <div class="form-group pv-body m-0" name="inputps" style="display:none;" th:for="|inputps${row?.index}|">
+                    <form action="community_join.htm" th:action="@{'/community/'+${item?.id}+'/join'}">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5" name="ps"></textarea>
+                            <label class="mdl-textfield__label" for="sample5">我是.....</label>
+                        </div>
+                        <div class="text-right m-t-10">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent pv-cancel" type="button">
+                                取消
+                            </button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent pv-send" type="button" name='submit'>
+                                发送
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- comcard end-->
+    <!-- coucard-->
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--6-col-phone" name="course_all" th:fragment="coucard" th:each="item : ${pages.items}">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="card profile-view">
+                <button th:id="demo-menu-lower-righta__${itemStat.index}__" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pv-menu">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect actions right-menu" th:for="demo-menu-lower-righta__${itemStat.index}__" for="demo-menu-lower-right">
+                    <li><a href="javascript:void(0);" class="mdl-menu__item edit" name="btn_update" th:id="@{${item?.id}}">修改</a></li>
+                    <li><a href="javascript:void(0);" th:href="@{'/course/'+${item?.id}+'/delete'}" class="mdl-menu__item  delete">删除</a></li>
+                    <li class="mdl-menu__item">退出课程</li>
+                </ul>
+                <a th:href="@{'/course/'+${item?.id}}" class="card-link">
+                    <div class="pv-header" style="background-image:url(../static/images/banner2.jpg)" th:style="'background:url(./images/banner2.jpg);'"></div>
+                </a>
+                <div class="pv-body">
+                    <h2><a class="course_name" href="javascript:void(0);" th:text="${item?.name}" th:href="@{'/course/'+${item?.id}}">课程名称</a></h2>
+                    <div class="pv-info">
+                        <i class="material-icons estate red">block</i>
+                        <span class="p-r-5">1 个成员</span><span>0 条信息</span>
+                        <!-- <span class="p-r-5" th:text="|${item?.usercount}个成员|">1 个成员</span><span th:text="|${item?.infocount}条信息|">0 条信息</span> -->
+                    </div>
+                    <small title="text" th:title="${item?.markdown}" th:text="${item?.markdown}">课程介绍</small>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent pv-follow-btn">加入</button>
+                </div>
+                <div class="form-group pv-body m-0" name="inputps" style="display:none;">
+                    <form action="community_join.htm" th:action="@{'/community/'+${item?.id}+'/join'}">
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5" name="ps"></textarea>
+                            <label class="mdl-textfield__label" for="sample5">我是.....</label>
+                        </div>
+                    </form>
+                    <div class="text-right m-t-10">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent pv-cancel">
+                            取消
+                        </button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent pv-send">
+                            发送
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- coucard end-->
+    <!-- usercard-->
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone" th:fragment="usercard">
+        <div class="mdl-card mdl-shadow--2dp memberbox">
+            <div class="mdl-card__media"> <img src="../static/images/face9.png" width="100" height="100"> </div>
+            <div class="actionBlock">
+                <div class="communityName"> <a href="javascript:void(0);">用户名</a> </div>
+                <div class="communityInfo"> <span class="pd-r10">用户的个性签名</span> </div>
+            </div>
+            <a href="javascript:void(0);" class="actionbtn">发消息</a>
+            <div class="mdl-card__menu">
+                <button id="demo-menu-lower-right1" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right1">
+                    <li class="mdl-menu__item">加好友</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- usercard end-->
+    <!-- com_hmenucard-->
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" th:fragment="com_hmenucard">
+        <div class="card mdl-shadow--2dp">
+            <ul class="tab-nav">
+                <li class="active waves-effect"><a href="javascript:void(0);" th:href="@{'communities'}">推荐的</a></li>
+                <li class=" waves-effect"><a href="javascript:void(0);" th:href="@{'/communities/joined'}">加入的</a></li>
+                <li class=" waves-effect"><a href="javascript:void(0);" th:href="@{'/communities/managed'}">管理的</a></li>
+            </ul>
+            <div class="lv-header-alt clearfix m-b-5">
+                <h2 class="lvh-label hidden-xs" th:text="${ps?.totalcount}">20条记录</h2>
+                <div class="lvh-search" style="display: none;">
+                    <i class="material-icons search-icon">search</i>
+                    <form>
+                        <input type="text" placeholder="输入关键词……" class="lvhs-input" />
+                    </form>
+                    <i class="lvh-search-close">×</i>
+                </div>
+                <ul class="lv-actions actions">
+                    <li style="vertical-align:top;">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent create-btn m-r-10" th:data-url="@{/community/input}" name="d_info_minibox"> 创建社群 </button>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="lvh-search-trigger"> <i class="material-icons">search</i> </a>
+                    </li>
+                    <li>
+                        <button id="cummunity-operate" class="mdl-button mdl-js-button mdl-button--icon" data-toggle="dropdown">
+                            <i class="material-icons">sort</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="cummunity-operate">
+                            <li> <a href="javascript:void(0);">最后更新</a> </li>
+                            <li> <a href="javascript:void(0);">创建时间</a> </li>
+                            <li> <a href="javascript:void(0);">活跃度</a> </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--mdl-cell end-->
+    <!-- com_hmenucard end-->
+    <!-- fri_hmenucard-->
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" th:fragment="fri_hmenucard">
+        <div class="card mdl-shadow--2dp">
+            <ul class="tab-nav">
+                <li class="active waves-effect"><a href="users.htm" th:text="${item?.text}">推荐的</a></li>
+                <li class=" waves-effect"><a href="users.htm?t=friend" th:text="${item?.text}">好友</a></li>
+                <li class=" waves-effect"><a href="users.htm?t=verify" th:text="${item?.text}">请求验证</a></li>
+                <li class=" waves-effect"><a href="users.htm?t=blacklist" th:text="${item?.text}">黑名单</a></li>
+            </ul>
+            <div class="lv-header-alt clearfix">
+                <h2 class="lvh-label hidden-xs"><span th:text="${ps?.totalcount}">12</span>条记录</h2>
+                <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable pull-right users_serch">
+                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
+                            <i class="material-icons">search</i>
+                        </label>
+                        <div class="mdl-textfield__expandable-holder">
+                            <input class="mdl-textfield__input" type="text" id="sample6">
+                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- fri_hmenucard end-->
+    <!--leftcontent-->
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone leftContent-leftList" th:fragment="leftcontent">
+        <div class="mdl-card mdl-shadow--2dp leftContent-leftBox">
+            <div class="mdl-card_media listBanner">
+                <div class="leftContent-leftIcon">
+                    <div class="IconMemu">
+                        <button id="demo-menu-lower-right10" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect px-menu">
+                            <i class="material-icons">share</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right10">
+                            <li class="mdl-menu__item">分享此社群</li>
+                        </ul>
+                        <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pc-menu">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                            <li class="mdl-menu__item">退出社群</li>
+                            <li class="mdl-menu__item">创建社群</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="leftContent-leftImg"><img src="../static/images/banner25.jpg" th:src="@{/images/banner25.jpg}"></div>
+            </div>
+            <div class="leftContent-headerMedia">
+                <div class="headerImg">
+                    <div class="bigImg"><img src="../static/images/banner25.jpg" th:src="@{/images/banner25.jpg}" alt="头像"></div>
+                    <div class="userText m-t-10">
+                        <small>1 个成员-公开分享</small>
+                    </div>
+                </div>
+                <div class="communityName"><a href="javascript:void(0);">名称</a></div>
+                <div class="communityIntro">介绍</div>
+                <div class="communityJoin">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        关注
+                    </button>
+                </div>
+                <div class="leftContent-drop-menu">
+                    <div class="drop-title">板块<i class="material-icons drop-open">expand_more</i><i class="material-icons drop-up">expand_less</i></div>
+                    <ul class="drop-down" style="display:none;">
+                        <li class="active"><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                        <li><a href="javascript:void(0);">教科研项目</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--leftcontent end-->
+    <!--userleftcontent-->
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone leftContent-leftList" th:fragment="userleftcontent">
+        <div class="mdl-card mdl-shadow--2dp leftContent-leftBox">
+            <div class="mdl-card_media listBanner">
+                <div class="leftContent-leftIcon">
+                    <div class="IconMemu">
+                        <button id="demo-menu-lower-right10" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect px-menu">
+                            <i class="material-icons">share</i>
+                        </button>
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right10">
+                            <li class="mdl-menu__item">分享</li>
+                        </ul>
+                        <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon pc-menu">
+                            <i class="material-icons">more_vert</i>
+                        </button>
+                        <!-- <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                            <li class="mdl-menu__item">加为好友</li>
+                        </ul> -->
+                    </div>
+                </div>
+                <div class="leftContent-leftImg"><img src="../static/images/banner25.jpg" th:src="${(sessuser?.image != null && !#strings.isEmpty(sessuser?.image)) ? sessuser?.image : '/images/banner25.jpg'}" th:alt="${sessuser?.name}"></div>
+            </div>
+            <div class="leftContent-headerMedia">
+                <div class="headerImg">
+                    <div class="bigImg"><img src="../static/images/banner25.jpg" th:src="${(sessuser?.logo != null && !#strings.isEmpty(sessuser?.logo)) ? sessuser?.logo : '/images/default-user.jpg'}" th:alt="${sessuser?.name}"></div>
+                    <div class="userText m-t-10">
+                        <small>公开</small>
+                    </div>
+                </div>
+                <div class="communityName"><a href="javascript:void(0);" th:href="@{/u/}" th:text="${sessuser?.name}">用户名称</a></div>
+                <div class="communityIntro" th:text="${sessuser?.mood}">签名</div>
+                <div class="communityJoin">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        关注
+                    </button>
+                </div>
+                <div class="leftContent-drop-menu">
+                    <div class="drop-title">菜单<i class="material-icons drop-open">expand_more</i><i class="material-icons drop-up">expand_less</i></div>
+                    <ul class="drop-down">
+                        <li class="active"><a href="javascript:void(0);" th:href="@{/u/}">文章</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/courses}">课程</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/communities}">社群</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/events}">活动</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/tasks}">任务</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/u/friends}">好友</a></li>
+                        <li><a href="javascript:void(0);" th:href="@{/u/intro}">介绍</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--userleftcontent end-->
+    <!--album_header-->
+    <header class="mdl-layout__header" id="header" th:fragment="layout_header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title logo">
+                <svg version="1.0" href="../static/images/logo.svg" width="30.000000pt" height="30.000000pt" viewBox="0 0 35.000000 35.000000" preserveAspectRatio="xMidYMid meet" style="margin: 5px 12px 5px -8px;">
+                    <g transform="translate(0.000000,35.000000) scale(0.050000,-0.050000)" fill="#fff" stroke="none">
+                        <path d="M177 637 c-201 -117 -212 -437 -20 -568 l72 -49 25 45 c39 71 31 127
+                        -24 163 -31 21 -50 52 -50 82 0 55 18 63 59 25 15 -14 8 8 -16 47 -52 88 -60
+                        157 -13 118 25 -21 30 -17 30 28 0 28 9 52 20 52 11 0 14 -37 6 -93 -11 -83
+                        -9 -92 22 -80 27 10 32 5 22 -26 -8 -26 0 -45 24 -58 50 -27 112 19 93 68 -11
+                        28 -7 33 20 23 28 -11 33 1 33 78 0 56 8 86 20 78 12 -7 15 -21 9 -31 -6 -11
+                        -5 -29 2 -41 10 -16 19 -14 31 5 13 21 17 19 18 -9 0 -42 -33 -110 -73 -150
+                        -38 -37 -35 -75 3 -44 45 38 36 -1 -13 -53 -40 -43 -41 -48 -10 -96 42 -64 42
+                        -67 -12 -75 -24 -3 -48 -22 -51 -42 -16 -84 194 46 250 154 152 293 -190 615
+                        -477 449z"/>
+                    </g>
+               </svg>
+                <a href="index.html">峳课</a>
+            </span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation" id="top-menu">
+                <!-- 头部的搜索 -->
+                <a class="mdl-navigation__link" href="javascript:void(0);" id="top-search"><i class="tm-icon material-icons">search</i></a>
+                
+                <div id="top-search-wrap">
+                  <div class="tsw-inner"> <i class="material-icons" id="top-search-close">search</i>
+                    <form><input type="text" name="keyword"></form>
+                  </div>
+                </div>
+                
+                <div id="album_operate" style="background:#fff none repeat scroll 0 0;">
+                    <div class="tsw-inner">
+                        <i id="top-search-close" class="material-icons">search</i>
+                        <form>
+                            <input type="text" name="keyword">
+                        </form>
+                    </div>
+                    <div class="close-upload">
+                        <i class="material-icons">close</i>
+                        <span>选择了<em id="photo-count">0</em>张照片</span>
+                    </div>
+                    <div class="header-btn">
+                        <div class="detailMenu">
+                            <div id="tt4" class="icon material-icons">share</div>
+                            <div class="mdl-tooltip" data-mdl-for="tt4">分享</div>
+                            <div id="tt1" class="icon material-icons">add</div>
+                            <div class="mdl-tooltip" data-mdl-for="tt1">添加到相册</div>
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="tt1">
+                              <li class="mdl-menu__item" name="tt1_create">创建新相册</li>
+                              <li class="mdl-menu__item" name="tt1_add">加入已有相册</li>
+                            </ul>
+                            <div id="tt2" class="icon material-icons">delete</div>
+                            <div class="mdl-tooltip" data-mdl-for="tt2">删除</div>
+                            <button id="demo-menu-lower-right5" class="mdl-button mdl-js-button mdl-button--icon">
+                                <i class="material-icons">more_vert</i>
+                            </button>
+                            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right5">
+                                <li class="mdl-menu__item">下载</li>
+                                <li class="mdl-menu__item">修改日期和时间</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div id="top-album-operate"></div> -->
+                 <!-- 头部的通知 -->
+                <div class="wrapper">
+                  <a class="mdl-navigation__link" href="javascript:void(0);" id="top-notifications"><i class="tm-icon material-icons">notifications</i></a>
+                  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu-lg" for="top-notifications">
+                    <div class="listview" id="notifications">
+                      <div class="lv-header"> 消息提醒
+                        <ul class="actions">
+                          <li class="dropdown"> <a href="javascript:void(0);" data-clear="notification" class="readall"> <i class="material-icons">done_all</i> </a> </li>
+                        </ul>
+                      </div>
+                      <div class="lv-body"> </div>
+                      <a class="lv-footer" href="javascript:void(0);">所有消息</a> 
+                    </div>
+                  </ul>
+                </div><!--wrapper end-->
+    
+                <!-- 头部的聊天 -->
+                <!--<a class="mdl-navigation__link" href="javascript:void(0);" id="chat_btn"><i class="tm-icon material-icons">comment</i></a>-->
+                <!-- 登陆前 -->
+                <a class="mdl-navigation__link login-register" href="login.html" th:href="@{/user/login}" th:if="${sessuser?.id == null}"><span>登录/注册</span></a>
+                <!-- 登陆后 -->
+                <div class="wrapper" th:if="${sessuser?.id != null}">
+                  <a class="mdl-navigation__link" href="javascript:void(0);" id="top-thisuser">
+                    <div class="pull-left user" id="demo-menu-lower-right3">
+                      <img src="../static/images/logo.png" th:src="${(sessuser?.logo != null && !#strings.isEmpty(sessuser?.logo)) ? sessuser?.logo : '/images/default-user.jpg'}" alt="" height="32" width="32" /> 
+                    </div>
+                  </a>
+                  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect dropdown-menu-lg" for="top-thisuser">
+                    <div id="notifications" class="listview">
+                      <div class="lv-header"> 个人信息 </div>
+                            <div class="lv-body" style="min-height: initial;">
+                                <div class="myInfo">
+                                    <div class="myphoto">
+                                        <div class="userhead" data-type="update_avatar">
+                                            <a href="myprofile.html" style="display:block;"> <img src="../static/images/logo.png" th:src="${(sessuser?.logo != null && !#strings.isEmpty(sessuser?.logo)) ? sessuser?.logo : '/images/default-user.jpg'}" th:alt="${sessuser?.name}" width="96px;" height="96px;" /> <span class="change-userhead">更改</span> </a>
+                                        </div>
+                                    </div>
+                                    <div class="myshow">
+                                        <div class="myname" th:text="${sessuser?.nickname}">用户名</div>
+                                        <div class="Email" th:text="${sessuser?.account}">12345@qq.com</div>
+                                        <div class="signature" th:text="${sessuser?.mood}">用户个性签名</div>
+                                        <!-- <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored me_" href="myprofile.htm"> 我的账户 </a> -->
+                                        <a class="mdl-js-button mdl-button--raised mdl-js-ripple-effect btn btn-colored btn-sm m-r-5" href="myprofile.html" th:href="@{/u/myprofile}">我的账户</a>
+                                        <a class="mdl-js-button mdl-button--raised mdl-js-ripple-effect btn btn-default btn-sm" href="myconfig.html" th:href="@{/u/myconfig}">设置</a> </div>
+                                </div>
+                                <!--myInfo end-->
+                            </div>
+                            <a href="javascript:void(0);" th:href="@{/u/logout}" class="lv-footer m-t-10 loginOut" id="JLogout">退出</a>
+                    </div>
+                  </ul>
+                </div><!--wrapper end-->
+                
+                
+            </nav>
+        </div>
+    </header>
+    <!--album_header end-->
+    <!--layout__drawer-->
+    <div class="mdl-layout__drawer" th:fragment="layout__drawer">
+        <div class="profile-menu">
+            <!-- <a href="home.html" th:href="@{/u/}"> -->
+            <a href="javascript:void(0);" th:href="@{javascript:void(0);}">
+                <img src="../static/images/banner6.jpg" th:src="@{/images/banner6.jpg}" alt="" class="profile-menu-bg">
+                <div class="profile-pic"> <img src="../static/images/logo.png" th:src="${(sessuser?.logo != null && !#strings.isEmpty(sessuser?.logo)) ? sessuser?.logo : '/images/default-user.jpg'}" th:alt="${sessuser?.name}" /> </div>
+                <div class="profile-info"><p th:text="${sessuser?.name}">用户名</p><i class="material-icons">arrow_drop_down</i> </div>
+            </a>
+            <ul class="main-menu">
+                <li> <a href="home.html" th:href="@{/u/}"><i class="material-icons">person</i> 我的主页</a></li>
+                <li> <a href="albums.html" th:href="@{/u/albums}"><i class="material-icons">photo_camera</i> 相册</a></li>
+                <li> <a href="friends.html" th:href="@{/u/friends}"><i class="material-icons">supervisor_account</i> 好友</a></li>
+            </ul>
+        </div>
+        <nav class="mdl-navigation main-menu">
+            <a class="mdl-navigation__link" href="index.html" th:href="@{/}"><i class="material-icons">home</i> 首页</a>
+            <a class="mdl-navigation__link" href="communitiesl.html" th:href="@{/communities}"><i class="material-icons">forum</i> 社群</a>
+            <a class="mdl-navigation__link" href="courses.html" th:href="@{/courses}"><i class="material-icons">school</i> 课程</a>
+            <a class="mdl-navigation__link" href="events.html" th:href="@{/events}"><i class="material-icons">content_paste</i> 活动</a>
+            <a class="mdl-navigation__link" href="tasks.html" th:href="@{/tasks}"><i class="material-icons">access_time</i> 任务</a>
+        </nav>
+    </div>
+    <!--layout__drawer end-->
+</body>
+
+</html>

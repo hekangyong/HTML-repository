@@ -1,0 +1,315 @@
+.container-fluid{padding-left: 0px; padding-right: 0px;}
+a:focus, a:hover{text-decoration: none;}
+/*--------- header strat ------------*/
+.hky_section{
+    background-image: url(../images/1.jpg);
+    background-size: cover;
+    background-position: center 0;
+    min-height: 100vh;
+}
+.hky_nav{
+    float: right;
+}
+.navbar-header a{color: #fff;font-size: 21px;line-height: 21px;font-weight: 400;letter-spacing: 1px;}
+.hky_nav li{
+    display: inline;
+}
+.hky_nav li a{
+    display: block;
+    position: relative;
+    padding: 15px 15px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.img_hky{
+    width: 16%;
+    margin-right: 3px;
+}
+/*--------- end ------------ */
+.hky_header_file{
+    color: #fff;
+    padding-top: 200px;
+}
+.hky_header_file .hky_header_title{
+    padding-bottom: 20px;
+}
+.hky_header_file .hky_header_title h1{
+    font-size: 31px;
+    line-height: 49px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.hky_header_body{
+    max-width: 400px;
+}
+.hky_header_body span{
+    color: rgba(255, 255, 255, .8);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.hky_header_button .hky_button{
+    background-color: #57b8f8;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 55px;
+}
+.hky_header_button{
+    margin-top: 40px;
+}
+.control{
+    margin-top: 145px;
+    margin-bottom: 145px;
+}
+.control_title h2{
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+.control_title span{
+    color: #5a6c90;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.control_body{
+    margin-top: 90px;
+}
+.control_body h3{
+    color: #2f4166;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+}
+.control_body p{
+    color: #7080a2;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    max-width: 500px;
+    margin-top: 13px !important;
+}
+.control_body .badge-new{
+    background-image: linear-gradient(-90deg,#609cff 0,#8d7fff 100%);
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    letter-spacing: .5px;
+    font-weight: 700;
+    position: relative;
+    top: -3px;
+    left: 7px;
+}
+.hky_section_a{
+    background-color: #fafafa;
+    border-bottom: 1px solid #e2e1e1;
+    border-top: 1px solid #e2e1e1;
+    padding: 100px 0 170px;
+}
+.web_title h3{
+    color: #555;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.web_title p{
+    color: #666;
+    font-size: 16px;
+    line-height: 25px;
+    max-width: 75%;
+    margin: 22px auto;
+}
+.web_title::after{
+    content: '';
+    position: absolute;
+    bottom: -45px;
+    height: 1px;
+    width: 87%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #eaeaea;
+}
+.feature{
+    margin-top: 110px;
+}
+.web_body img{
+    float: left;
+    margin-left: 63px;
+}
+.web_body_wenben{
+    float: right;
+    max-width: 75%;
+}
+.web_body_wenben h4{
+    color: #53575f;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 18px;
+    margin-top: 0 !important;
+}
+.web_body_wenben p{
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #666;
+    width: 95%;
+}
+.web_body{
+    margin-top: 20px;
+}
+.great_padding{
+    padding: 184px 0 174px;
+}
+.great_title h4{
+    color: #36afda;
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    margin-top: 0px
+}
+.great_body p{
+    width: 310px;
+    margin-bottom: 35px;
+    color: #666;
+    line-height: 24px;
+}
+.hky_section_b{
+    background-image: url("../images/photo-1479243396208-be1751535cdb.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    margin-top: 160px;
+    height: 500px;
+    background-attachment: fixed;
+}
+.heroku{
+    width: 510px;
+    height: 390px;
+    position: absolute;
+    right: 13%;
+    bottom: -60px;
+    box-shadow: 0 5px 16px rgba(76,84,109,.4);
+    padding: 60px 70px;
+    background: #54657b;
+}
+.heroku_body p{
+    margin-top: 25px;
+    color: #fff;
+    font-size: 17px;
+    line-height: 28px;
+    font-style: italic;
+}
+.heroku_footer{
+    margin-top: 20px;
+}
+.heroku_footer span{
+    color: #cfdcec;
+    font-size: 16px;
+}
+.guys_icons{
+    margin-top: 200px;
+    margin-bottom: 120px;
+    position: relative;
+}
+.guys_header::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #e9e9e9;
+    top: 11px;
+}
+.guys_header h4{
+    position: relative;
+    top: -10px;
+    padding: 0 40px;
+    background: #fff;
+    color: #97a8b8;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 1.8px;
+    font-weight: 600;
+    line-height: 24px;
+}
+.guy_icons_a{
+    margin-top: 20px;
+}
+.footer_big{
+    padding: 80px 0 130px;
+    background: #2b4255;
+    position: relative;
+    color: #ffffff;
+}
+.footer_big .footer_title h3{
+    font-size: 24px;
+    margin-top: 0 !important;
+    margin-bottom: 20px;
+    font-weight: 300;
+    line-height: 44px;
+}
+.footer_button .footer_button_a{
+    background: #42b1e2;
+    font-size: 13px;
+    border: 0;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    display: inline-block;
+    box-shadow: 1px 1px rgba(0,0,0,.09);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 40px;
+    color: #ffffff;
+}
+.footer_button .footer_button_b{
+    color: #b5dcff;
+    text-transform: uppercase;
+    border: 2px solid #91bbe0;
+    font-weight: 600;
+    padding: 9px 60px;
+    border-radius: .25rem;
+    letter-spacing: 1.8px;
+    display: inline-block;
+    margin-left: 10px;
+}
+.footer_mean{
+    margin-top: 100px;
+}
+.mean h3{
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+.mean_ul{
+    padding-left: 0px !important;
+}
+.mean_ul li{
+    list-style: none;
+}
+.mean_ul li a{
+    color: #97b0c5;
+    display: block;
+    margin-bottom: 2px;
+}
+.bottom{
+    color: #68849a;
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 13px;
+}

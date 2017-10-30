@@ -1,0 +1,134 @@
+.navbar-black{
+	background-color: #000000
+}
+.img{
+	width: 50px;
+	margin-top: 10px;
+}
+.logo li a{
+	color: #fff;
+}
+.logo li{
+	padding: 20px;
+	list-style: none;
+}
+.logo li a:hover{
+	text-decoration: none;
+	border-bottom: 3px solid #f91010;
+}
+@media (min-width: 768px) {
+	.navbar-nav{
+		float: right;
+		margin-right: 23px
+	}
+}
+.chan{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.more{
+	border: 3px solid #000000;
+	padding: 7px 15px;
+	color: #000;
+	border-radius: 10px;
+}
+.more:hover{
+	background-color: #000;
+	color: #fff;
+	text-decoration: none;
+}
+.right{
+	text-align: right;
+	margin-top: 20px;
+}
+.backimg{
+	background-image: url("../img/7.jpg");
+	background-size:100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-top: 100px;
+}
+.baclcolor{
+	background-color: rgba(255, 255, 255, 0.56);
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	border-radius: 10px;
+}
+.img1{
+	margin-top: 10px;
+}
+.newspaper{
+	padding-right: 15px;
+}
+.new{
+	margin-left: 45px;
+	margin-top: 10px;
+}
+.xinwen{
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 2em
+}
+.xinwen2{
+	margin-top: 30px;
+	margin-left: 45px;
+}
+.more2{
+	background-color: #fff;
+	color: #000;
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+.more2:hover{
+	background-color: #000;
+	color: #fff;
+	text-decoration: none;
+}
+.bot{
+	padding-bottom: 45px;
+}
+.img2{
+	width: 15%;
+}
+.fuwu{
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+p{
+	text-indent: 2em;
+	margin-top: 20px;
+}
+.back4{
+	background-color: #eeeeee;
+	height: 1px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.back{
+	background-color: #bab9b8;
+	padding: 20px 0px 20px 0px;
+	border-radius: 30px;
+	margin-top: 30px;
+}
+.img5{
+	width: 50%;
+}
+.xiangce{
+	margin-top: 70px;
+}
+.back1{
+	background-image: url("../img/6.jpg");
+	background-size: 100% 100%;
+	background-position: center center;
+	padding: 120px 0px 120px 0px;
+	margin-top: 60px;
+}
+.control{
+	color: #fff;
+}
+.button{
+	margin-top: 30px;
+}

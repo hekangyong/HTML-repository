@@ -1,0 +1,325 @@
+body{
+	font-family: 微软雅黑;
+}
+.back-img .container{
+	    padding-left: 0px; 
+}
+.back-img{
+	background-image: url("../images/banner.jpg");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+}
+.mar-top{
+	margin-top: 12px;
+}
+/*--导航栏--*/
+.nav1 li{
+	float: left;
+	list-style: none;
+	width: 100px;
+	text-align: right;
+	height: 50px;
+	line-height: 50px;
+}
+.nav1 li a{
+	color: #fff;
+	text-decoration: none;
+}
+.activeq{
+	font-size: 16px;
+}
+.nav1 li .activeq{
+	color: #199d2f;
+}
+.activeq{
+	font-size: 18px;
+}
+.nav1 li .activeq{
+	color: #199d2f;
+}
+.but{
+	color: #fff;
+	font-weight: 500;
+	font-size: 16px;
+	transition: 0.4s;
+}
+.but:hover{
+	color: #199d2f;
+	transition: 0.4s;
+}
+/* --end-- */
+.h-size{
+	font-weight: 500;
+	line-height: 50px;
+	margin-top: 220px;
+	margin-bottom: 320px;
+	margin-left: 20px;
+}
+.h-size h2{
+	font-size: 20px;
+}
+.attend{
+	color: #fff;
+	background-color: #199d2f;
+	padding: 7px 20px;
+	font-size: 16px;
+	transition: 0.4s;
+}
+.attend:hover{
+	background-color: #4cc760;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.attend:focus{
+	text-decoration: none;
+	color: #fff;
+}
+.bor{
+	border-bottom: 1px solid #ebebeb;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.icon{
+	border-right: 1px solid #ebebeb;
+}
+.icon i{
+	color: #199d2f;
+	font-size: 24px;
+}
+.icon span{
+	color: #969696;
+	margin-left: 10px;
+}
+.icon1 i{
+	color: #199d2f;
+	font-size: 24px;
+}
+.icon1 span{
+	color: #969696;
+	margin-left: 10px;
+}
+/* --产品介绍-- */
+.h2-color{
+	color: #199d2f;
+	font-size: 22px;
+}
+.mar-top1{
+	margin-top: 40px;
+}
+.mar-top2{
+	margin-top: 70px;
+}
+.left{
+	display: block;
+    margin-left: auto;
+    margin-right: 0px;
+}
+.ding{
+	color: #199d2f;
+	font-weight: 500;
+	font-size: 20px;
+	margin-top: 5px !important;
+}
+.chan-h5{
+	margin-left: 78px;
+	margin-top: 20px;
+	color: #c7c7c7;
+	font-size: 15px;
+	font-weight: 500;
+}
+.chan-ol{
+	margin-left: 76px;
+	color: #c7c7c7;
+	font-size: 15px;
+	line-height: 1.6;
+	font-weight: 400;
+}
+.mar-top3{
+	margin-top: -5px;
+}
+.button{
+	float: right;
+	margin-top: 15px;	
+}
+.xiangqing{
+	background-color: #199d2f;
+	padding: 5px 15px;
+	color: #fff; 
+	transition: 0.4s;
+}
+.xiangqing:hover{
+	background-color: #4cc760;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.mar-top4{
+	margin-top: 100px;
+}
+.top{
+	margin-top: 60px;
+}
+.more{
+	text-align: center;
+	margin-top: 88px;
+}
+.more1{
+	padding: 5px 30px;
+	background-color: #199d2f;
+	color: #fff; 
+	transition: 0.4s;
+}
+.more1:hover{
+	background-color: #4cc760;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.4s;
+}
+.line{
+	background-color: #ededed;
+	height: 1px;
+	margin-top: 90px;
+}
+/*--end--*/
+/* --新闻中心-- */
+.new-h2{
+	color: #f87b00;
+	font-size: 35px;
+	font-weight: 700;
+}
+.new{
+	margin-top: 150px;
+}
+.new-p{
+	color: #d2d2d2;
+	text-indent: 2em;
+	font-size: 15px;
+	line-height: 1.6;
+	font-weight: 500;
+}
+.new-wz{
+	margin-top: 110px;
+}
+.new-img{
+	margin-top: 80px;
+}
+.new-but{
+	margin-top: 98px;
+	margin-bottom: 95px;
+}
+.new-a{
+	padding: 5px 20px;
+	background-color: #199d2f;
+	color: #fff;
+	transition: 0.4s;
+}
+.new-a:hover{
+	background-color: #4cc760;
+	color: #fff;
+	text-decoration: none;
+	transition: 0.4s;
+}
+/* --end-- */
+/*--人才招纳--*/
+.back2{
+	background-image: url("../images/back-img.jpg");
+	background-size: cover;
+	background-position: center center;
+	color: #fff;
+}
+.back2-1{
+	background-color: rgba(45,48,53,0.7);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+.back2 .row{
+	margin-right: 0px !important;
+}
+.back2 h2{
+	margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+.back2 h3{
+	margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+.back2 p{
+	margin: 0 0 0;
+}
+.margin-top .rec-guan{
+	margin-top: 60px;
+	font-size: 20px;
+	font-weight: 500px;
+}
+.labe1{
+	background-color: #bda881;
+	font-size: 14px;
+	border-radius: 0;
+	font-weight: 500;
+	padding: .2em .6em.3em;
+	line-height: 1;
+	text-align: center;
+}
+.margin-top2{
+	margin-top: 45px;
+}
+.p{
+	padding-top: 45px;
+	line-height: 1.7;
+	font-weight: 500;
+	font-size: 15px;
+}
+.but2{
+	margin-top: 45px;
+}
+.zhize{
+	background-color: #f87b00;
+	padding: 5px 20px;
+	color: #fff;
+	transition: 0.4s;
+}
+.zhize:hover{
+	background-color: #e79849;
+	transition: 0.4s;
+	color: #fff;
+	text-decoration: none;
+}
+/*--end--*/
+/*--联系我们--*/
+.img-back{
+	background-image: url("../images/bf-events-bg.jpg");
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding-top: 60px;
+	padding-bottom: 62px;
+}
+.contact-1{
+	font-size: 18px;
+	font-weight: 500;
+	color: #199d2f;
+}
+.line-two{
+	background-color: #199d2f;
+	height: 1px;
+	margin-top: 25px;
+}
+.contact-ol{
+	margin-top: 30px;
+	margin-left: 70px;
+}
+.contact-ol ul li{
+	list-style: none;
+	color: #87c78d;
+	line-height: 1.7;
+	font-size: 16px;
+	font-weight: 500;
+}
+.margin-bot{
+	margin-top: 20px;
+}
+/*--end--*/

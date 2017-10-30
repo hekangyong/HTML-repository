@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../static/css/material.min.css" th:href="@{/css/material.min.css}">
+<link rel="stylesheet" href="../static/fonts/material-icons.css" th:href="@{/fonts/material-icons.css}">
+<link rel="stylesheet" href="../static/css/albums.css" th:href="@{/css/albums.css}">
+<link href="../static/css/base.css" rel="stylesheet" th:href="@{/css/base.css}">
+</head>
+<body>
+<div>
+  <div th:each="item,row:${pages?.items}">
+    <div> <img data-cover src="../static/img/movie.jpg" th:src="${item?.cover != null} ? ${item?.cover} : 'images/album.jpg'" alt="">
+      <button th:id="${row.index}" th:if="${item?.type != 'publish'}"> <i class="material-icons">more_vert</i> </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" th:for="${row.index}" th:if="${item?.type != 'publish'}">
+        <li class="mdl-menu__item" name="reset_name">重命名相册</li>
+        <li class="mdl-menu__item">分享相册</li>
+        <li class="mdl-menu__item" th:data-id="${item?.id}" name="delete_album">删除相册</li>
+      </ul>
+    </div>
+    <div><a th:href="@{/album/{id}(id=${item?.id},view='simple')}" class="origin_name" th:text="${item?.name}"></a></div>
+    <div name="reset_form" th:if="${item?.type != 'publish'}">
+      <form th:action="@{'/album/'+${item?.id}}" method="post">
+        <div class="mdl-cell--10-col mdl-textfield mdl-js-textfield change_name_input">
+          <input class="mdl-textfield__input sample1" type="text" name="name" th:value="${item?.name}">
+          <label class="mdl-textfield__label" for="sample1">新名称</label>
+        </div>
+        <input type="hidden" name="scope" th:value="${item?.scope}" />
+        <button class="mdl-cell--2-col mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect change_name_btn albums_update" type="button" value="修改">修改</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="../static/js/jquery-1.11.3.min.js" th:src="@{/js/jquery-1.11.3.min.js}"></script> 
+<script src="../static/js/material.min.js" th:src="@{/js/material.min.js}"></script> 
+<script src="../static/js/base.js" th:src="@{/js/base.js}"></script> 
+<script src="../static/js/albums.js" th:src="@{/js/albums.js}"></script> 
+<script src="../static/js/jquery.lazy/jquery.lazy.min.js" th:src="@{/js/jquery.lazy/jquery.lazy.min.js}"></script> 
+<script>
+  $(function() {
+	  console.log($, 'jquery works');
+	  $('[data-cover]').lazy({
+		  onError: function(element) {
+		  	console.log(element);
+		  }
+	  });
+  });
+  </script>
+</body>
+</html>
